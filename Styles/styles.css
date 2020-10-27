@@ -122,3 +122,9 @@ header {
   flex-direction: row;
   justify-content: space-between;
 }
+i:hover {
+  color: #ff0000;
+  font-size: 12px;
+}
+/*SVG ANIMACION*/
+
