@@ -6,6 +6,7 @@ async function getCard(pokemon) {
     const card = document.createElement('section');
     card.classList.add('card');
     card.appendChild(Types(pokemon.types));
+    card.appendChild(Stats(pokemon.stats));
     Pokedex.appendChild(card);
     return resolve(card);
   });

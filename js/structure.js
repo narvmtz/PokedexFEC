@@ -1,32 +1,23 @@
+const icons = [
+  'fa-heart',
+  'fa-fire',
+  'fa-shield-alt',
+  'fa-atom',
+  'fa-plus-square',
+  'fa-bolt',
+];
+
 function Stats(stats) {
-  return `
-  <div class="stats">
-    <span>
-      <p><i class="fas fa-heart"></i> HP</p>
-      <p>${stats[0]}</p>
-    </span>
-    <span>
-      <p><i class="fas fa-fire"></i> Attack</p>
-      <p>${stats[1]}</p>
-    </span>
-    <span>
-      <p><i class="fas fa-shield-alt"></i> Defense</p>
-      <p>${stats[2]}</p>
-    </span>
-    <span>
-      <p><i class="fas fa-atom"></i> Special Attack</p>
-      <p>${stats[3]}</p>
-    </span>
-    <span>
-      <p><i class="fas fa-plus-square"></i>
-        Special Defense</p>
-      <p>${stats[4]}</p>
-    </span>
-    <span>
-      <p><i class="fas fa-bolt"></i> Speed</p>
-      <p>${stats[5]}</p>
-    </span>
-  </div>`;
+  const htmStats = document.createElement('div');
+  htmStats.classList.add('stats');
+  icons.forEach((icon, i) => {
+    const htmlStat = document.createElement('span');
+    console.log();
+    htmlStat.innerHTML += `<p><i class="fas ${icon}"></i> ${stats[i].stat.name}</p>`;
+    htmlStat.innerHTML += `<p>${stats[i].base_stat}</p>`;
+    htmStats.appendChild(htmlStat);
+  });
+  return htmStats;
 }
 
 function Types(params) {
