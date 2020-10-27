@@ -1,15 +1,20 @@
 const URL = 'https://pokeapi.co/api/v2/';
 const Limint = 20;
 const Offset = 0;
+let allPokemon = [];
 
 async function getAllPokemon() {
-  const res = await fetch(`${URL}pokemon/?offset=${Offset}&limit=${Limint}`);
-  if (!res.ok) return false;
-  const allPokemon = await res.json();
-  allPokemon.results.forEach((element) => {
-    getPokemon(element.url).then((pokemon) => {
-      console.log(pokemon);
-    });
+  return new Promise(async (resolve, reject) => {
+    const res = await fetch(`${URL}pokemon/?offset=${Offset}&limit=${Limint}`);
+    if (!res.ok) return reject;
+    const resPokemon = await res.json();
+    await Promise.all(
+      resPokemon.results.map(async (element) => {
+        const pokemon = await getPokemon(element.url);
+        allPokemon.push(pokemon);
+      })
+    );
+    return resolve(allPokemon);
   });
 }
 
@@ -23,8 +28,8 @@ async function getPokemon(url) {
         Front: pokemonComplet.sprites.front_default,
         Back: pokemonComplet.sprites.back_default,
       },
-      name: pokemonComplet.name,
       id: pokemonComplet.id,
+      name: pokemonComplet.name,
       stats: pokemonComplet.stats,
       types: pokemonComplet.types,
     };

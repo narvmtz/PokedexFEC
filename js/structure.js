@@ -28,20 +28,14 @@ function Stats(stats) {
     </span>
   </div>`;
 }
-function Card(params) {
-  let card = '<section class="card">';
-  params.forEach((param) => {
-    card += param;
-  });
-  return (card += '</section>');
-}
 
 function Types(params) {
-  let htmlType = `<div class="type"> `;
+  const htmlType = document.createElement('div');
+  htmlType.classList.add('type');
   params.forEach((type) => {
-    htmlType += `<p class= ${type.type.name} >${type.type.name}</p>`;
+    htmlType.innerHTML += `<p class= ${type.type.name} >${type.type.name}</p>`;
   });
-  return (htmlType += `</div>`);
+  return htmlType;
 }
 
 function Info(params) {
@@ -56,4 +50,4 @@ function Info(params) {
 <h3>${params[3]}</h3>
 `;
 }
-export { Stats, Info, Card, Types };
+export { Stats, Info, Types };
