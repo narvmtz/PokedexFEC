@@ -160,14 +160,8 @@ header {
   margin: 0.3rem;
 }
 
-.normalicon {
-  margin-right: 0.8rem;
-}
-
-.tinyicon {
-margin-right: 1rem;
-} 
-
-.bigicon{
-margin-right: 0.8rem;
+.fas {
+  width: 8px;
+  height: 8px;
+  margin-right: 0.7rem;
 }
