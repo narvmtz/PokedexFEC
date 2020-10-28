@@ -69,4 +69,4 @@ function createCard(pokemon) {
     return resolve(ArrayComponent);
   });
 }
-export { Stats, Info, Types, createCard };
+export { createCard };
