@@ -7,38 +7,66 @@ const icons = [
   'fa-bolt',
 ];
 
-function Stats(stats) {
-  const htmStats = document.createElement('div');
-  htmStats.classList.add('stats');
-  icons.forEach((icon, i) => {
-    const htmlStat = document.createElement('span');
-    console.log();
-    htmlStat.innerHTML += `<p><i class="fas ${icon}"></i> ${stats[i].stat.name}</p>`;
-    htmlStat.innerHTML += `<p>${stats[i].base_stat}</p>`;
-    htmStats.appendChild(htmlStat);
+const alt = [' - img front', ' - img back'];
+
+function Stats(params) {
+  return new Promise((resolve, reject) => {
+    const htmStats = document.createElement('div');
+    htmStats.classList.add('stats');
+    icons.forEach((icon, i) => {
+      const htmlStat = document.createElement('span');
+      console.log();
+      htmlStat.innerHTML += `<p><i class="fas ${icon}"></i> ${params[i].stat.name}</p>`;
+      htmlStat.innerHTML += `<p>${params[i].base_stat}</p>`;
+      htmStats.appendChild(htmlStat);
+    });
+    return resolve(htmStats);
   });
-  return htmStats;
 }
 
 function Types(params) {
-  const htmlType = document.createElement('div');
-  htmlType.classList.add('type');
-  params.forEach((type) => {
-    htmlType.innerHTML += `<p class= ${type.type.name} >${type.type.name}</p>`;
+  return new Promise((resolve, reject) => {
+    const htmlType = document.createElement('div');
+    htmlType.classList.add('type');
+    params.forEach((type) => {
+      htmlType.innerHTML += `<p class= ${type.type.name} >${type.type.name}</p>`;
+    });
+    return resolve(htmlType);
   });
-  return htmlType;
 }
 
-function Info(params) {
-  return `
-  <div class="Info">
-  <img src=${params[0]} alt="front_default"
-    class="sprite">
-  <img src=${params[1]} alt="back_default"
-    class="sprite">
-  <p># <span class="number">${params[2]}</span></p>
-</div>
-<h3>${params[3]}</h3>
-`;
+function Info(imgs, id) {
+  return new Promise((resolve, reject) => {
+    const htmlInfo = document.createElement('div');
+    htmlInfo.classList.add('Info');
+    imgs.forEach((img, i) => {
+      const htmlImg = document.createElement('img');
+      htmlImg.setAttribute('src', img);
+      htmlImg.setAttribute('alt', name + alt[i]);
+      htmlImg.classList.add('sprite');
+      htmlInfo.appendChild(htmlImg);
+    });
+    htmlInfo.innerHTML += `<p># <span class="number">${id}</span></p>`;
+    return resolve(htmlInfo);
+  });
 }
-export { Stats, Info, Types };
+
+function insertName(name) {
+  return new Promise((resolve, reject) => {
+    const htmlName = document.createElement('h3');
+    htmlName.innerHTML = name;
+    return resolve(htmlName);
+  });
+}
+
+function createCard(pokemon) {
+  const ArrayComponent = [];
+  return new Promise(async (resolve, reject) => {
+    ArrayComponent.push(await Info(pokemon.img, pokemon.id));
+    ArrayComponent.push(await insertName(pokemon.name));
+    ArrayComponent.push(await Types(pokemon.types));
+    ArrayComponent.push(await Stats(pokemon.stats));
+    return resolve(ArrayComponent);
+  });
+}
+export { Stats, Info, Types, createCard };

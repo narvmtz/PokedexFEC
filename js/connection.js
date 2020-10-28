@@ -24,10 +24,10 @@ async function getPokemon(url) {
     if (!res.ok) return reject;
     const pokemonComplet = await res.json();
     let pokemon = {
-      img: {
-        Front: pokemonComplet.sprites.front_default,
-        Back: pokemonComplet.sprites.back_default,
-      },
+      img: [
+        pokemonComplet.sprites.front_default,
+        pokemonComplet.sprites.back_default,
+      ],
       id: pokemonComplet.id,
       name: pokemonComplet.name,
       stats: pokemonComplet.stats,
