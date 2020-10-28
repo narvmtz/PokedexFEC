@@ -13,8 +13,7 @@
 <body>
   <header>
     <div class="title">
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTtuLvq_z6fGcatFZVwO9KBw03rgVetQA-p9Q&usqp=CAU"
-        alt="" width=30px height="30px">
+      <img src="./img/pokeball.svg" alt="" width=30px height="30px">
       <h1>
         Pokédex
       </h1>
@@ -27,25 +26,26 @@
     <section class="filter">
       <input type="text" name="pokeSearch" id="search" class="search" placeholder="Ingrese el nombre del pokemon">
       <select name="Type" id="Type" class="typeSelect">
-        <option value="">Tipo</option>
-        <option value=""></option>
-        <option value=""></option>
-        <option value=""></option>
-        <option value=""></option>
-        <option value=""></option>
-        <option value=""></option>
-        <option value=""></option>
-        <option value=""></option>
-        <option value=""></option>
-        <option value=""></option>
-        <option value=""></option>
-        <option value=""></option>
-        <option value=""></option>
-        <option value=""></option>
-        <option value=""></option>
-        <option value=""></option>
-        <option value=""></option>
-        <option value=""></option>
+        <option value="Type">Tipo</option>
+        <option value="Normal">Normal</option>
+        <option value="fighting">Luchador</option>
+        <option value="flying">Volador</option>
+        <option value="poison">Veneno</option>
+        <option value="ground">Tierra</option>
+        <option value="rock">Roca</option>
+        <option value="Bug">Bicho</option>
+        <option value="ghost">Fantasma</option>
+        <option value="fire">Fuego</option>
+        <option value="water">Agua</option>
+        <option value="grass">Hierba</option>
+        <option value="electric">Eléctrico</option>
+        <option value="psychic">Psíquico</option>
+        <option value="ice">Hielo</option>
+        <option value="dragon">Dragon</option>
+        <option value="Dark">Siniestro</option>
+        <option value="Fairy">Hada</option>
+        <option value="unknown">Desconocido</option>
+        <option value="shadow">Oscuro</option>
       </select>
     </section>
     <section class="collection">
@@ -53,8 +53,6 @@
         <div class="Info">
           <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/132.png" alt="sprite"
             class="sprite">
-          <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/132.png" alt=""
-            class="sprite">
           <p># <span class="number">001</span></p>
         </div>
         <h3>pokemonName</h3>
@@ -65,155 +63,33 @@
         </div>
         <div class="stats">
           <span>
-            <p><i class="fas fa-heart"></i> HP</p>
+            <p><i class="fas fa-heart normalicon"></i> HP</p>
             <p>0</p>
           </span>
           <span>
-            <p><i class="fas fa-fire"></i> Attack</p>
+            <p><i class="fas fa-fire tinyicon"></i> Attack</p>
             <p>0</p>
           </span>
           <span>
-            <p><i class="fas fa-shield-alt"></i> Defense</p>
+            <p><i class="fas fa-shield-alt bigicon"></i> Defense</p>
             <p>0</p>
           </span>
           <span>
-            <p><i class="fas fa-atom"></i> Special Attack</p>
+            <p><i class="fas fa-atom bigicon"></i> Special Attack</p>
             <p>0</p>
           </span>
           <span>
-            <p><i class="fas fa-plus-square"></i>
+            <p><i class="fas fa-plus-square bigicon"></i>
               Special Defense</p>
             <p>0</p>
           </span>
           <span>
-            <p><i class="fas fa-bolt"></i> Speed</p>
+            <p><i class="fas fa-bolt tinyicon"></i> Speed</p>
             <p>0</p>
           </span>
         </div>
       </section>
 
-      <section class="card">
-        <div class="Info">
-          <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/132.png" alt="sprite"
-            class="sprite">
-          <p># <span class="number">001</span></p>
-        </div>
-        <h3>pokemonName</h3>
-        <div class="type">
-          <p>Tipo</p>
-        </div>
-        <div class="stats">
-          <span>
-            <p><i class="fas fa-heart"></i> HP</p>
-            <p>0</p>
-          </span>
-          <span>
-            <p><i class="fas fa-fire"></i> Attack</p>
-            <p>0</p>
-          </span>
-          <span>
-            <p><i class="fas fa-shield-alt"></i> Defense</p>
-            <p>0</p>
-          </span>
-          <span>
-            <p><i class="fas fa-atom"></i> Special Attack</p>
-            <p>0</p>
-          </span>
-          <span>
-            <p><i class="fas fa-first-aid"></i>
-              Special Defense</p>
-            <p>0</p>
-          </span>
-          <span>
-            <p><i class="fas fa-bolt"></i> Speed</p>
-            <p>0</p>
-          </span>
-        </div>
-      </section>
-
-      <section class="card">
-        <div class="Info">
-          <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/132.png" alt="sprite"
-            class="sprite">
-          <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/132.png" alt=""
-            class="sprite">
-          <p># <span class="number">001</span></p>
-        </div>
-        <h3>pokemonName</h3>
-        </div>
-        <div class="type">
-          <p>Tipo</p>
-        </div>
-        <div class="stats">
-          <span>
-            <p><i class="fas fa-heart"></i> HP</p>
-            <p>0</p>
-          </span>
-          <span>
-            <p><i class="fas fa-fire"></i> Attack</p>
-            <p>0</p>
-          </span>
-          <span>
-            <p><i class="fas fa-shield-alt"></i> Defense</p>
-            <p>0</p>
-          </span>
-          <span>
-            <p><i class="fas fa-atom"></i> Special Attack</p>
-            <p>0</p>
-          </span>
-          <span>
-            <p><i class="fas fa-first-aid"></i>
-              Special Defense</p>
-            <p>0</p>
-          </span>
-          <span>
-            <p><i class="fas fa-bolt"></i> Speed</p>
-            <p>0</p>
-          </span>
-        </div>
-      </section>
-
-      <section class="card">
-        <div class="Info">
-          <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/132.png" alt="sprite"
-            class="sprite">
-          <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/132.png" alt=""
-            class="sprite">
-          <p># <span class="number">001</span></p>
-        </div>
-        <h3>pokemonName</h3>
-        </div>
-        <div class="type">
-          <p>Tipo</p>
-        </div>
-        <div class="stats">
-          <span>
-            <p><i class="fas fa-heart"></i> HP</p>
-            <p>0</p>
-          </span>
-          <span>
-            <p><i class="fas fa-fire"></i> Attack</p>
-            <p>0</p>
-          </span>
-          <span>
-            <p><i class="fas fa-shield-alt"></i> Defense</p>
-            <p>0</p>
-          </span>
-          <span>
-            <p><i class="fas fa-atom"></i> Special Attack</p>
-            <p>0</p>
-          </span>
-          <span>
-            <p><i class="fas fa-first-aid"></i>
-              Special Defense</p>
-            <p>0</p>
-          </span>
-          <span>
-            <p><i class="fas fa-bolt"></i> Speed</p>
-            <p>0</p>
-          </span>
-        </div>
-      </section>
     </section>
   </main>
   <footer>
