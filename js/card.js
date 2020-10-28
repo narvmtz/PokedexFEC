@@ -1,11 +1,14 @@
-import { Stats, Info, Types } from './structure.js';
+import { createCard } from './structure.js';
 const Pokedex = document.querySelector('#pokemon');
 
 async function getCard(pokemon) {
   return new Promise(async (resolve, reject) => {
     const card = document.createElement('section');
     card.classList.add('card');
-    card.appendChild(Types(pokemon.types));
+    const components = await createCard(pokemon);
+    components.forEach((componet) => {
+      card.appendChild(componet);
+    });
     Pokedex.appendChild(card);
     return resolve(card);
   });
