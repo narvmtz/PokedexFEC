@@ -1,9 +1,8 @@
 const URL = 'https://pokeapi.co/api/v2/';
-const Limint = 20;
 const Offset = 0;
 let allPokemon = [];
 
-async function getAllPokemon() {
+async function getAllPokemon(Limint) {
   return new Promise(async (resolve, reject) => {
     const res = await fetch(`${URL}pokemon/?offset=${Offset}&limit=${Limint}`);
     if (!res.ok) return reject;
