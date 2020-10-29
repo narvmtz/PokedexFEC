@@ -1,22 +1,18 @@
 import { getAllPokemon } from './connection.js';
-import { getAllCard, generateCard } from './card.js';
-const Pokedex = document.querySelector('#pokemon');
+import { getAllCard } from './card.js';
+import { peintType, peintCard } from './peint.js';
 const limit = 20;
 
 async function main() {
-  const Cards = generateCard(limit);
-  Cards.forEach((element) => {
-    Pokedex.appendChild(element);
-  });
+  peintType();
+  const Cards = peintCard(limit);
   await getAllPokemon(limit)
-    .then((pokemons) => getAllCard(pokemons, Cards))
-    .catch(console.warn());
+    .then((pokemons) => {
+      getAllCard(pokemons, Cards);
+    })
+    .catch((error) => {
+      console.log(error);
+    });
 }
 
 main();
-
-// TODO
-// agregar 00
-// ver todos los pokemon
-// Modularizar
-// tipos

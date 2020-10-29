@@ -1,5 +1,4 @@
 import { createCard } from './structure.js';
-const Pokedex = document.querySelector('#pokemon');
 
 function generateCard(amount) {
   const Cards = [];
@@ -12,25 +11,24 @@ function generateCard(amount) {
 }
 
 async function getCard(pokemon, card) {
-  return new Promise(async (resolve, reject) => {
-    const components = await createCard(pokemon);
-    components.forEach((componet) => {
-      card.appendChild(componet);
-      card.classList.remove('hidden');
-      card.classList.add('card');
+  await createCard(pokemon)
+    .then((components) => {
+      components.forEach((componet) => {
+        card.appendChild(componet);
+        card.classList.remove('hidden');
+        card.classList.add('card');
+      });
+      return card;
+    })
+    .catch((error) => {
+      return error;
     });
-    Pokedex.appendChild(card);
-    return resolve(card);
-  });
 }
 
 async function getAllCard(allPokemon, cards) {
-  return new Promise(async (resolve, reject) => {
-    allPokemon.forEach(async (element, i) => {
-      await getCard(element, cards[i]);
-      return resolve;
-    });
-  });
+  for (let index = 0; index < allPokemon.length; index++) {
+    await getCard(allPokemon[index], cards[index]);
+  }
 }
 
 export { getAllCard, generateCard };
