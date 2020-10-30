@@ -1,6 +1,7 @@
 const URL = 'https://pokeapi.co/api/v2/';
 const Offset = 0;
 let allPokemon = [];
+let allTypes = [];
 
 async function getAllPokemon(Limint) {
   try {
@@ -36,4 +37,38 @@ async function getPokemon(url) {
   }
 }
 
-export { getAllPokemon };
+async function getType(url) {
+  try {
+    const res = await fetch(url);
+    if (!res.ok) throw new Error('Tipo no encontrado');
+    const data = await res.json();
+    for (let index = 0; index < data.names.length; index++) {
+      const name = data.names[index].language.name;
+      if (name === 'es') {
+        return data.names[index].name;
+      }
+    }
+  } catch (error) {
+    console.error(error.message);
+  }
+}
+
+async function getTypes() {
+  try {
+    const res = await fetch(`${URL}type`);
+    if (!res.ok) throw new Error('Error en la api');
+    const data = await res.json();
+    for (let index = 0; index < data.results.length; index++) {
+      await getType(data.results[index].url).then((type) => {
+        if (type != undefined) {
+          allTypes.push(type);
+        }
+      });
+    }
+    return allTypes;
+  } catch (error) {
+    console.error(error.message);
+  }
+}
+
+export { getAllPokemon, getTypes };

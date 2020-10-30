@@ -1,30 +1,10 @@
 import { generateCard } from './card.js';
+import { getTypes } from './connection.js';
 const Pokedex = document.querySelector('#pokemon');
 const TypeHtml = document.querySelector('#Type');
 
-const Types = [
-  'Normal',
-  'Luchador',
-  'Volador',
-  'Veneno',
-  'Tierra',
-  'Roca',
-  'Bicho',
-  'Fantasma',
-  'Fuego',
-  'Agua',
-  'Hierba',
-  'Eléctrico',
-  'Psíquico',
-  'Hielo',
-  'Dragon',
-  'Siniestro',
-  'Hada',
-  'Desconocido',
-  'Oscuro',
-];
-
-function peintType() {
+async function peintType() {
+  const Types = await getTypes();
   Types.forEach((type) => {
     const optionHtml = document.createElement('option');
     optionHtml.setAttribute('value', type);
