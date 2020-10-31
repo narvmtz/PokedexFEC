@@ -32,16 +32,6 @@ header {
   text-align: center;
 }
 
-.hidden {
-  border-radius: 1rem;
-  width: 220px;
-  height: 320px;
-  margin: 1rem;
-  padding: 1.5rem;
-  background-image: url("../img/back2.png");
-  background-size: cover;
-
-}
 .filter {
   padding: 1rem 4rem;
   display: flex;
@@ -136,6 +126,16 @@ header {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+}
+
+.hidden {
+  margin: 1rem 0;
+  padding: 1.5rem;
+  width: 325px;
+    height: 402px;
+  border-radius: 1rem;
+  background-image: url("../img/back2.png");
+  background-size: cover;
 }
 
 footer {
