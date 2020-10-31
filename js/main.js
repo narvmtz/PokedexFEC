@@ -4,7 +4,7 @@ import { peintType, peintCard } from './peint.js';
 const limit = 20;
 
 async function main() {
-  peintType();
+  await peintType();
   const Cards = peintCard(limit);
   await getAllPokemon(limit)
     .then((pokemons) => {

@@ -5,12 +5,14 @@ const TypeHtml = document.querySelector('#Type');
 
 async function peintType() {
   const Types = await getTypes();
-  Types.forEach((type) => {
-    const optionHtml = document.createElement('option');
-    optionHtml.setAttribute('value', type);
-    optionHtml.innerHTML = type;
-    TypeHtml.appendChild(optionHtml);
-  });
+  for (const key in Types) {
+    if (Types.hasOwnProperty(key)) {
+      const optionHtml = document.createElement('option');
+      optionHtml.setAttribute('value', key);
+      optionHtml.innerHTML = Types[key];
+      TypeHtml.appendChild(optionHtml);
+    }
+  }
 }
 function peintCard(limit) {
   const Cards = generateCard(limit);
