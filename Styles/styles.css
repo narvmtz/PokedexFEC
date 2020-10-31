@@ -5,6 +5,7 @@
 body {
   font-family: 'Trispace', sans-serif;
   box-sizing: border-box;
+
 }
 
 header {
@@ -54,9 +55,19 @@ header {
 
 .collection {
   display: flex;
-  flex-direction: row;
   justify-content: space-evenly;
   flex-wrap: wrap;
+}
+
+.hidden {
+  margin: 1rem 0;
+  padding: 1.5rem;
+  width: 350px;
+  height: 450px;
+  border-radius: 1rem;
+  background-image: url("../img/back2.png");
+  background-position: center center;
+  background-size: cover;
 }
 
 .card {
@@ -126,16 +137,6 @@ header {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-}
-
-.hidden {
-  margin: 1rem 0;
-  padding: 1.5rem;
-  width: 325px;
-    height: 402px;
-  border-radius: 1rem;
-  background-image: url("../img/back2.png");
-  background-size: cover;
 }
 
 footer {
