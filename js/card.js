@@ -1,43 +1,34 @@
 import { createCard } from './structure.js';
-const Pokedex = document.querySelector('#pokemon');
 
-async function getCard(pokemon) {
-  return new Promise(async (resolve, reject) => {
+function generateCard(amount) {
+  const Cards = [];
+  for (let index = 0; index < amount; index++) {
     const card = document.createElement('section');
-    card.classList.add('card');
-    const components = await createCard(pokemon);
-    components.forEach((componet) => {
-      card.appendChild(componet);
-    });
-    Pokedex.appendChild(card);
-    return resolve(card);
-  });
+    card.classList.add('hidden');
+    Cards.push(card);
+  }
+  return Cards;
 }
 
-async function getAllCard(allPokemon) {
-  return new Promise(async (resolve, reject) => {
-    const resAllPokemon = [];
-    allPokemon.forEach(async (element) => {
-      resAllPokemon.push(await getCard(element));
-      return resolve(resAllPokemon);
+async function getCard(pokemon, card) {
+  await createCard(pokemon)
+    .then((components) => {
+      components.forEach((componet) => {
+        card.appendChild(componet);
+        card.classList.remove('hidden');
+        card.classList.add('card');
+      });
+      return card;
+    })
+    .catch((error) => {
+      return error;
     });
-  });
 }
 
-export { getAllCard };
+async function getAllCard(allPokemon, cards) {
+  for (let index = 0; index < allPokemon.length; index++) {
+    await getCard(allPokemon[index], cards[index]);
+  }
+}
 
-// Array de allpokemon da 1 solo valor
-// No muestras las tarjetas por no ser nodo
-// Cambiar todo el archivo structure
-//
-
-// let pokemon = {
-//   img: {
-//     Front: pokemonComplet.sprites.front_default,
-//     Back: pokemonComplet.sprites.back_default,
-//   },
-//   name: pokemonComplet.name,
-//   id: pokemonComplet.id,
-//   stats: pokemonComplet.stats,
-//   types: pokemonComplet.types,
-// };
+export { getAllCard, generateCard };

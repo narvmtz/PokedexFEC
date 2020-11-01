@@ -1,17 +1,19 @@
 import { getAllPokemon } from './connection.js';
 import { getAllCard } from './card.js';
-const Pokedex = document.querySelector('#pokemon');
+import { peintType, peintCard } from './peint.js';
+
+const limit = 20;
 
 async function main() {
-  await getAllPokemon()
-    .then((pokemons) => getAllCard(pokemons))
-    .catch(console.warn());
+  peintType();
+  const Cards = peintCard(limit);
+  await getAllPokemon(limit)
+    .then((pokemons) => {
+      getAllCard(pokemons, Cards);
+    })
+    .catch((error) => {
+      console.log(error);
+    });
 }
 
 main();
-
-// TODO
-// agregar 00
-// ver todos los pokemon
-// Modularizar
-// tipos

@@ -34,7 +34,6 @@ body::after {
     /* IE8 */
     -ms-filter: "progid:DXImageTransform.Microsoft.Matrix(SizingMethod='auto expand', M11=0.7071067811865476, M12=-0.7071067811865475, M21=0.7071067811865475, M22=0.7071067811865476)"; }
 
-
 header {
   display: flex;
   justify-content: center;
@@ -71,14 +70,16 @@ header {
   justify-content: space-between;
 }
 
-.search, .typeSelect {
+.search,
+.typeSelect { 
   width: 300px;
   padding: 0.5rem;
   border-radius: 1rem;
   border: 2px solid var(--gray);
 }
 
-.search:focus, .typeSelect:focus {
+.search:focus,
+.typeSelect:focus {
   outline: none;
 }
 
@@ -89,14 +90,28 @@ header {
   flex-wrap: wrap;
 }
 
+.hidden {
+  margin: 1rem 0;
+  padding: 1.5rem;
+  width: 350px;
+  height: 450px;
+  border-radius: 1rem;
+  background-image: url("../img/back2.png");
+  background-position: center center;
+  background-size: cover;
+}
+
 .card {
   font-size: var(--normal);
   margin: 1rem 0;
-  padding: 1rem;
+  padding: 1.5rem;
   width: 25%;
   height: 30%;
   border-radius: 1rem;
   background-color: var(--cyan);
+  transform-style: preserve-3d;
+  transition: all 0.5s linear;
+  transform: rotateY(360deg);
 }
 
 .card h3 {
@@ -164,4 +179,16 @@ header {
   width: 8px;
   height: 8px;
   margin-right: 0.7rem;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.team {
+  width: 40%;
+  text-align: center;
 }

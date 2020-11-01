@@ -1,52 +1,39 @@
 const URL = 'https://pokeapi.co/api/v2/';
-const Limint = 20;
 const Offset = 0;
 let allPokemon = [];
 
-async function getAllPokemon() {
-  return new Promise(async (resolve, reject) => {
+async function getAllPokemon(Limint) {
+  try {
     const res = await fetch(`${URL}pokemon/?offset=${Offset}&limit=${Limint}`);
-    if (!res.ok) return reject;
+    if (!res.ok) throw new Error('Error en la api');
     const resPokemon = await res.json();
-    await Promise.all(
-      resPokemon.results.map(async (element) => {
-        const pokemon = await getPokemon(element.url);
+    for (let index = 0; index < Limint; index++) {
+      await getPokemon(resPokemon.results[index].url).then((pokemon) => {
         allPokemon.push(pokemon);
-      })
-    );
-    return resolve(allPokemon);
-  });
+      });
+    }
+    return allPokemon;
+  } catch (error) {
+    console.error(error.message);
+  }
 }
 
 async function getPokemon(url) {
-  return new Promise(async (resolve, reject) => {
+  try {
     const res = await fetch(url);
-    if (!res.ok) return reject;
-    const pokemonComplet = await res.json();
-    let pokemon = {
-      img: [
-        pokemonComplet.sprites.front_default,
-        pokemonComplet.sprites.back_default,
-      ],
-      id: pokemonComplet.id,
-      name: pokemonComplet.name,
-      stats: pokemonComplet.stats,
-      types: pokemonComplet.types,
+    if (!res.ok) throw new Error('Pokemon no encontrado');
+    const data = await res.json();
+    const pokemon = {
+      img: [data.sprites.front_default, data.sprites.back_default],
+      id: data.id,
+      name: data.name,
+      stats: data.stats,
+      types: data.types,
     };
-    return resolve(pokemon);
-  });
+    return pokemon;
+  } catch (error) {
+    console.error(error.message);
+  }
 }
 
 export { getAllPokemon };
-
-// Todo
-
-/**
- * Todo
- *
- * sacar la informacion de la variable pokemon
- * Pasar la informacion a las funciones de Strcuture
- * la funcion Card es la ultima.
- *
- *
- */
