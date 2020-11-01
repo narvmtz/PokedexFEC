@@ -1,44 +1,67 @@
-@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+/*Fonts*/
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;700&display=swap');
+
+
 
 :root{
-  --normal: 16px;
-  --danger: #E53935;
-  --gray: #c4c4c4;
-  --cyan: #C0EDF2;
-  --dark: #000;
-  --light: #F0FEFF;
-  --type: rgb(108, 245, 149);
+
+  --color-primary:#E53935;
+  --gradient-cyan: linear-gradient(90deg, rgba(155,191,200,1) 0%, rgba(184,228,232,1) 26%, rgba(192,237,240,1) 54%, rgba(0,212,255,1) 100%);
+  --font-primary:'Oswald', sans-serif;
+  --font-secondary:'Roboto Mono', monospace;
+  --card-shadow:0 10px 30px -10px rgba(78, 78, 78, 0.4);
+  
 }
 
-body::after {
-  content: "";
-  background: url('/img/pokeball.svg') no-repeat;
-  opacity: 0.04;
-  top: -200px;
-  left: -200px;
-  bottom: 0;
-  right: 700px;
-  position: absolute;
-  z-index: -1;
-  behavior:url(-ms-transform.htc);
-    /* Firefox */
-    -moz-transform:rotate(330deg);
-    /* Safari and Chrome */
-    -webkit-transform:rotate(330deg);
-    /* Opera */
-    -o-transform:rotate(330deg);
-    /* IE9 */
-    -ms-transform:rotate(330deg);
-    /* IE6,IE7 */
-    filter: progid:DXImageTransform.Microsoft.Matrix(sizingMethod='auto expand', M11=0.7071067811865476, M12=-0.7071067811865475, M21=0.7071067811865475, M22=0.7071067811865476);
-    /* IE8 */
-    -ms-filter: "progid:DXImageTransform.Microsoft.Matrix(SizingMethod='auto expand', M11=0.7071067811865476, M12=-0.7071067811865475, M21=0.7071067811865475, M22=0.7071067811865476)"; }
+html{
+   box-sizing: border-box;
+}
+
+*,  *::before, *::after {
+   box-sizing: inherit;
+}
+
+p{
+   margin:0;
+   padding:0;
+}
+
+body{
+   padding:0;
+   margin:0;
+   box-sizing: border-box;
+   max-width: 100%;
+   font-family: var(--font-secondary);
+   height:100vh;
+}
+
+
+/*utils*/
+.text-center{
+   text-align: center;
+}
+/*end utils*/
+
+.wrapper{
+   height:auto;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   width: 100%;
+}
+
+.main{
+  width:100%;
+}
 
 header {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  background-color:var(--color-primary) ;
 }
 
 .title {
@@ -88,6 +111,7 @@ header {
   display: flex;
   justify-content: space-evenly;
   flex-wrap: wrap;
+  flex: 1 100%;
 }
 
 .hidden {
@@ -104,40 +128,45 @@ header {
 .card {
   font-size: var(--normal);
   margin: 1rem 0;
-  padding: 1.5rem;
-  width: 25%;
+  padding: 1rem 1rem;
+  width: 45%;
   height: 30%;
-  border-radius: 1rem;
-  background-color: var(--cyan);
-  transform-style: preserve-3d;
-  transition: all 0.5s linear;
-  transform: rotateY(360deg);
+  border-radius: 0.8rem;
+  background-color: #c0edf252;
+  box-shadow: var(--card-shadow);
 }
 
-.card h3 {
+.card h3{
+  font-family: var(--font-primary);
+  font-weight: 800;
+  color: #4F4F4F;
+  font-size: calc(12px + 1vw);
   margin: 0;
-  padding-left: 1.2rem;
 }
 
 .Info {
-  padding: 0 1rem;
   display: flex;
+  /* flex-direction: column-reverse; */
   justify-content: space-between;
+  align-items: center;
 }
 
 .Info p {
   display: flex;
-  border: 1px solid var(--dark);
+  flex-direction: row;
+  border: 1px solid #4F4F4F;
   border-radius: 100%;
-  width: 2.5rem;
-  height: 2.5rem;
+  width: calc(2rem + 0.8vw);
+  height: calc(2rem + 0.8vw);
   align-items: center;
-  padding: 0.2rem;
+  justify-content: center;
 }
 
 .sprite {
-  width: 96px;
-  height: 96px;
+  max-width: 96px;
+  max-height: 96px;
+  width: calc(60% + 1vw);
+  height: calc(60% + 1vw);
 }
 
 .type {
@@ -146,15 +175,22 @@ header {
   height: 20%;
   border-radius: 1rem;
   display: flex;
-  justify-content: space-evenly;
+  flex-direction: row;
+  justify-content: space-between;
+  color:#4F4F4F;
 }
 
-.type p {
+.type p{
   text-align: center;
-  width: 30%;
+  width: 45%;
   padding: 0.3rem 0.1rem;
   border-radius: 1rem;
   background-color: var(--type);
+}
+
+.type p:nth-child(2){
+  border: 1px solid cadetblue;
+  background-color: transparent;
 }
 
 .stats {
@@ -162,8 +198,22 @@ header {
   margin: 0 auto;
   padding: 0.8rem 0.5rem;
   border-radius:1rem;
-  background-color: var(--light);
-  font-size: var(--normal);
+  background-color: aquamarine;
+  font-size: 0.6rem;
+  display:none;
+}
+
+.stats span {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.stats {
+  width: 100%;
+  padding: 1rem;
+  border-radius:1rem;
+  background-color: aquamarine;
+  font-size: 0.6rem;
 }
 
 .stats span {
@@ -171,24 +221,27 @@ header {
   justify-content: space-between;
 }
 
-.stats p{
-  margin: 0.3rem;
+@media(min-width: 768px){
+   .card{
+      flex:1 calc(32% - 30px);
+      margin-right: 1rem;
+   }
+   .stats {
+    display: block;
+  }
 }
 
-.fas {
-  width: 8px;
-  height: 8px;
-  margin-right: 0.7rem;
+@media(min-width: 1024px){
+  .card{
+    flex: 1 cacl(22% - 20%);
+  }
 }
 
-footer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
 
-.team {
-  width: 40%;
-  text-align: center;
-}
+
+/**** 
+  TODO
+  *sacar clase text-center
+  *Esta adaptable
+  *Header arrancar
+/

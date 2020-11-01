@@ -1,45 +1,37 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="stylesheet"
-      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
-      integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
-      crossorigin="anonymous"
-    />
-    <link rel="stylesheet" href="./Styles/styles.css">
-    <title>Pokedex</title>
-  </head>
-  <body>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+    integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+  <link rel="stylesheet" href="./Styles/styles.css">
+  <title>Pokedex</title>
+</head>
+
+<body>
+  <div class="wrapper">
     <header>
-      <div class="title">
-        <img
-          src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTtuLvq_z6fGcatFZVwO9KBw03rgVetQA-p9Q&usqp=CAU"
-          alt=""
-          width="30px"
-          height="30px"
-        />
-        <h1>Pokédex</h1>
+      <nav class="pokemonTypes">
+
+      </nav>
+      <!-- <div class="title">
+        <img src="./img/pokeball.svg" alt="" width=30px height="30px">
+        <h1>
+          Pokédex
+        </h1>
       </div>
       <p class="description">
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sequi,
-        sapiente! Omnis, nihil, corrupti dolor.
-      </p>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sequi, sapiente! Omnis, nihil, corrupti dolor.
+      </p> -->
     </header>
     <main class="main">
       <section class="filter">
-        <input
-          type="text"
-          name="pokeSearch"
-          id="search"
-          class="search"
-          placeholder="Ingrese el nombre del pokemon"
-        />
+        <input type="text" name="pokeSearch" id="search" class="search" placeholder="Ingrese el nombre del pokemon" />
         <select name="Type" id="Type" class="typeSelect"></select>
       </section>
-      <section class="collection" id="pokemon"></section>
+      <section id="pokemon" class="collection"></section>
     </main>
     <footer>
       <h3 class="team">Creado por ProyectoKey de FrontEnd Café</h3>
@@ -49,5 +41,6 @@
     <script type="module" src="./js/card.js"></script>
     <script type="module" src="./js/peint.js"></script>
     <script type="module" src="./js/main.js"></script>
-  </body>
+</body>
+
 </html>
