@@ -71,4 +71,5 @@ async function createCard(pokemon) {
       return error;
     });
 }
+
 export { createCard };
