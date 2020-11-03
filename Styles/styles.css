@@ -58,7 +58,7 @@ body{
   height:100vh;
 }
 
-body::after{
+/* body::after{
   content:url('../img/pokeball.svg');
   position: absolute;
   opacity: 0.05;
@@ -70,7 +70,7 @@ body::after{
   top:2rem;
   z-index: -100;
   background-attachment: fixed;
-}
+} */
 
 /*utils*/
 .text-center{
