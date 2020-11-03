@@ -24,7 +24,7 @@ async function getPokemon(url) {
     if (!res.ok) throw new Error('Pokemon no encontrado');
     const data = await res.json();
     const pokemon = {
-      img: [data.sprites.front_default, data.sprites.back_default],
+      img: [data.sprites.front_default],
       id: data.id,
       name: data.name,
       stats: data.stats,
