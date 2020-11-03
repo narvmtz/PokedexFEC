@@ -2,39 +2,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;700&display=swap');
 
-:root{
+/*Variables*/
+@import url("./var.css");
 
-  --color-primary:#E53935;
-  --gradient-cyan: linear-gradient(380deg, rgba(110,217,216,0.2805322812718838) 5%, rgba(83,231,222,0.8351541300113796) 100%);
-  --font-primary:'Oswald', sans-serif;
-  --font-secondary:'Roboto Mono', monospace;
-  /* --card-shadow:0 10px 30px -10px rgba(78, 78, 78, 0.4); */
-  --card-shadow:0 10px 30px -10px rgb(2 137 154 / 59%);
-  --stats-shadow:10px 5px 20px -10px rgba(78, 78, 78, 0.2);
-
-  /*types-color*/
-  --color-bug:#D8E030;
-  --color-dark:#A8A878;
-  --color-dragon:#B8A0F8;
-  --color-electric:#F8F878;
-  --color-fairy:#F4BDC9;
-  --color-fighting:#F08030;
-  --color-fire:#F8D030;
-  --color-flying:#C8C0F8;
-  --color-grass:#C0F860;
-  --color-ground:#F8F878;
-  --color-ice:#D0F8E8;
-  --color-normal:#D8D8C0;
-  --color-ghost:#A890F0;
-  --color-posion:#D880B8;
-  --color-psychic:#F8C0B0;
-  --color-rock: #E0C068;
-  --color-steel: #D3D3D3;
-  --color-water:#67D2F1;
-}
+/*Type-color*/
+@import url("./type.css");
 
 html{
-   box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 *,
@@ -48,7 +23,6 @@ p{
   padding:0;
 }
 
-
 body{
   padding:0;
   margin:0;
@@ -58,23 +32,9 @@ body{
   height:100vh;
 }
 
-/* body::after{
-  content:url('../img/pokeball.svg');
-  position: absolute;
-  opacity: 0.05;
-  width:110%;
-  transform: rotate(-20deg);
-  background-position: center;
-  background-size: cover;
-  left:0;
-  top:2rem;
-  z-index: -100;
-  background-attachment: fixed;
-} */
-
 /*utils*/
 .text-center{
-   text-align: center;
+  text-align: center;
 }
  
 .wrapper{
@@ -232,79 +192,6 @@ header {
   80% { transform: translate(-1px, -1px) rotate(1deg); }
   90% { transform: translate(1px, 2px) rotate(0deg); }
   100% { transform: translate(1px, -2px) rotate(-1deg); }
-}
-
-/*types-color*/
-.bug{
-  background-color: var(--color-bug);
-}
-
-.dark{
-  background-color: var(--color-dark);
-}
-
-.dragon{
-  background-color: var(--color-dragon);
-}
-
-.electric{
-  background-color: var(--color-electric);
-}
-
-.fairy{
-  background-color: var(--color-fairy);
-}
-
-.fighting{
-  background-color: var(--color-fighting);
-}
-
-.fire{
-  background-color: var(--color-fire);
-}
-
-.flying{
-  background-color: var(--color-flying);
-}
-
-.ghost{
-  background-color:var(--color-ghost) ;
-}
-
-.grass{
-  background-color: var(--color-grass);
-}
-
-.ground{
-  background-color: var(--color-ground);
-}
-
-.ice{
-  background-color: var(--color-ice);
-}
-
-.normal{
-  background-color:var(--color-normal);
-}
-
-.poison{
-  background-color: var(--color-posion);
-}
-
-.psychic{
-  background-color: var(--color-psychic);
-}
-
-.rock{
-  background-color: var(--color-rock);
-}
-
-.steel{
-  background-color: var(--color-steel);
-}
-
-.water{
-  background-color: var(--color-water);
 }
 
 .type {
