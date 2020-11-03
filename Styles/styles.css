@@ -58,6 +58,20 @@ body{
   height:100vh;
 }
 
+body::after{
+  content:url('../img/pokeball.svg');
+  position: absolute;
+  opacity: 0.05;
+  width:110%;
+  transform: rotate(-20deg);
+  background-position: center;
+  background-size: cover;
+  left:0;
+  top:2rem;
+  z-index: -100;
+  background-attachment: fixed;
+}
+
 /*utils*/
 .text-center{
    text-align: center;
@@ -78,7 +92,7 @@ body{
 
 header {
   display: flex;
-  justify-content: center;
+  justify-content:flex-end;
   align-items: center;
   flex-direction: row;
   background-color:#4F4F4F;
@@ -87,11 +101,18 @@ header {
   padding:1rem;
 }
 
+.pokeball{
+  cursor:pointer;
+  animation-name: shake;
+  animation-duration: .6s;
+  animation-iteration-count: 2, infinite;
+}
+
 .title{
   margin: 1rem auto 0 auto;
   color: var(--color-primary);
   font-family: 'Oswald', sans-serif;
-  font-size: 2.5rem;
+  font-size: calc(2.5rem + 1vw);
   font-weight: 900;
 }
 
@@ -105,10 +126,11 @@ header {
   font-weight: 500;
   max-width: 800px;
   line-height: 1.7;
+  font-style: italic;
 }
 
 .filter {
-  display: flex;
+  display: none;
   justify-content: space-between;
 }
 
@@ -316,7 +338,7 @@ header {
   background-color: rgb(181, 253, 229);
   font-size: calc(0.3rem + 0.4vw);
   display:none;
-  font-weight: 800;
+  font-weight: 700;
   color:#4F4F4F;
   box-shadow: var(--stats-shadow);
 }
@@ -326,6 +348,12 @@ header {
   flex-direction: row;
   justify-content: space-between;
   padding:0.5rem;
+}
+
+.team{
+  font-family: var(--font-primary);
+  width:100%;
+  margin-top:4rem;
 }
 
 @media(min-width: 768px){
@@ -342,6 +370,12 @@ header {
   .collection{
     max-width: 1200px;
     margin:0 auto;
+  }
+  .title{
+  margin: 4rem auto 0 auto;
+  }
+  .description{
+    margin:2rem 0rem;
   }
 }
 
