@@ -53,6 +53,16 @@ async function getTypes() {
     const length = `${URL}type/`.length;
     if (!res.ok) throw new Error('Error en la api');
     const data = await res.json();
+<<<<<<< HEAD
+    const pokemon = {
+      img: [data.sprites.front_default],
+      id: data.id,
+      name: data.name,
+      stats: data.stats,
+      types: data.types,
+    };
+    return pokemon;
+=======
     let results = [];
     data.results.map((data) => {
       if (data.url.slice(length, data.url.length - 1) <= 1000) {
@@ -87,6 +97,7 @@ async function getPokemonType(type, limit) {
       });
       return allPokemon;
     });
+>>>>>>> origin/mobile
   } catch (error) {
     console.error(error.message);
   }
