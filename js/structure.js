@@ -1,3 +1,5 @@
+import { getTypes } from './connection.js';
+
 const icons = [
   'fa-heart',
   'fa-fire',
@@ -22,10 +24,13 @@ async function Stats(params) {
 }
 
 async function Types(params) {
+  const Types = await getTypes();
   const htmlType = document.createElement('div');
   htmlType.classList.add('type');
   params.forEach((type) => {
-    htmlType.innerHTML += `<p class= ${type.type.name} >${type.type.name}</p>`;
+    htmlType.innerHTML += `<p class= ${type.type.name} >${
+      Types[type.type.name]
+    }</p>`;
   });
   return htmlType;
 }

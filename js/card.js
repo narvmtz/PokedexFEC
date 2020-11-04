@@ -25,10 +25,24 @@ async function getCard(pokemon, card) {
     });
 }
 
-async function getAllCard(allPokemon, cards) {
+async function getAllCard(allPokemon, cards, types) {
+  if (types) {
+    for (let index = 0; index < allPokemon.length; index++) {
+      cards[index].innerHTML = '';
+      cards[index].classList.remove('card');
+      cards[index].classList.add('hidden');
+    }
+  }
   for (let index = 0; index < allPokemon.length; index++) {
-    await getCard(allPokemon[index], cards[index]);
+    await getCard(allPokemon[index], cards[index], false);
   }
 }
 
-export { getAllCard, generateCard };
+function resetCard(cards, limit) {
+  for (let index = 0; index < limit; index++) {
+    cards[index].innerHTML = '';
+    cards[index].classList.remove('card');
+    cards[index].classList.add('hidden');
+  }
+}
+export { getAllCard, generateCard, resetCard };
