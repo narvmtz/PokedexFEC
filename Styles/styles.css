@@ -70,6 +70,10 @@ header {
   animation-iteration-count: 2, infinite;
 }
 
+.pokemonTypes {
+  margin-left: auto;
+}
+
 .title{
   margin: 1rem auto 0 auto;
   color: var(--color-primary);
@@ -95,15 +99,15 @@ header {
   height: 400px;
   background-color: red;
 }
-.filter {
-  display: none;
+/* .filter {
+  display: flex;
   justify-content: space-between;
-}
+} */
 
 .search,
 .typeSelect { 
-  width: 100px;
-  padding: 0.5rem;
+  width: 48%;
+  padding: 0.3rem;
   border-radius: 1rem;
   border: 2px solid var(--gray);
 }
@@ -247,6 +251,45 @@ header {
   font-family: var(--font-primary);
   width:100%;
   margin-top:4rem;
+}
+
+
+@media(max-width: 414px){
+  .card{
+    flex:1 calc(32% - 30px);
+    margin-right: 1rem;
+  }
+  .stats {
+  display: block;
+  }
+
+  header {
+    background-color: #FFFFFF;
+}
+
+  .pokeball {
+    display: none;
+  }
+
+  .pokemonTypes {
+    margin: auto;
+  }
+
+  .search, .typeSelect {
+    background-color: #cecece;
+}
+
+.search, .typeSelect {
+  background-color: #cecece;
+}
+
+button, input, optgroup, select, textarea {
+  font-size: 80%;
+}
+.description{
+  display: none;
+}
+
 }
 
 @media(min-width: 768px){
