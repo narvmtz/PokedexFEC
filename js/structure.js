@@ -35,7 +35,7 @@ async function Types(params) {
   return htmlType;
 }
 
-async function Info(imgs, id) {
+async function Info(imgs, id, name) {
   const htmlInfo = document.createElement('div');
   htmlInfo.classList.add('Info');
   imgs.forEach((img, i) => {
