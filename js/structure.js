@@ -35,7 +35,7 @@ async function Types(params) {
   return htmlType;
 }
 
-async function Info(imgs, id) {
+async function Info(imgs, id, name) {
   const htmlInfo = document.createElement('div');
   htmlInfo.classList.add('Info');
   imgs.forEach((img, i) => {
@@ -59,7 +59,7 @@ async function insertName(name) {
 
 async function createCard(pokemon) {
   return await Promise.all([
-    Info(pokemon.img, pokemon.id),
+    Info(pokemon.img, pokemon.id, pokemon.name),
     insertName(pokemon.name),
     Types(pokemon.types),
     Stats(pokemon.stats),
