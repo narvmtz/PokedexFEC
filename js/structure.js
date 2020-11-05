@@ -59,7 +59,7 @@ async function insertName(name) {
 
 async function createCard(pokemon) {
   return await Promise.all([
-    Info(pokemon.img, pokemon.id),
+    Info(pokemon.img, pokemon.id, pokemon.name),
     insertName(pokemon.name),
     Types(pokemon.types),
     Stats(pokemon.stats),
