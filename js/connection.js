@@ -1,24 +1,10 @@
 const URL = 'https://pokeapi.co/api/v2/';
 const Offset = 0;
 let allTypes;
+let allPokemon;
+let arrayPokemon;
 
-async function getAllPokemon(Limint) {
-  try {
-    const res = await fetch(`${URL}pokemon/?offset=${Offset}&limit=${Limint}`);
-    if (!res.ok) throw new Error('Error en la api');
-    const resPokemon = await res.json();
-    return promiseFetch(resPokemon.results).then((data) => {
-      const allPokemon = [];
-      data.forEach((pokemon) => {
-        allPokemon.push(estrcuturePokemon(pokemon));
-      });
-      return allPokemon;
-    });
-  } catch (error) {
-    console.error(error.message);
-  }
-}
-
+/* Funcion para estructurar todas las peticiones al api */
 async function promiseFetch(results, type) {
   if (type) {
     return Promise.all(results.map((data) => fetch(data.pokemon.url))).then(
@@ -32,6 +18,19 @@ async function promiseFetch(results, type) {
   });
 }
 
+/* Funcion para devolver la respuesta del fetch en formato json */
+async function peticionFetch(url) {
+  return await fetch(url)
+    .then((res) => {
+      return res.json();
+    })
+    .catch((error) => {
+      console.log(error);
+      throw new Error('Error en la api');
+    });
+}
+
+/* Estructura la info del pokemon */
 function estrcuturePokemon(pokemon) {
   return {
     img: [pokemon.sprites.front_default],
@@ -42,6 +41,57 @@ function estrcuturePokemon(pokemon) {
   };
 }
 
+async function getNamePokemon() {
+  if (!!arrayPokemon) {
+    return arrayPokemon;
+  }
+  try {
+    const data = await peticionFetch(`${URL}pokemon/?&limit=-1`);
+    const length = `${URL}pokemon/`.length;
+    data.results.map((pokemon, i) => {
+      const urlId = pokemon.url.slice(length, pokemon.url.length - 1);
+      if (urlId == 10001) {
+        arrayPokemon = data.results.slice(0, i);
+      }
+    });
+    return arrayPokemon;
+  } catch (error) {
+    return console.log(error);
+  }
+}
+
+async function getAllPokemon(Limint) {
+  if (!!allPokemon) {
+    return allPokemon;
+  }
+  try {
+    const resPokemon = await peticionFetch(
+      `${URL}pokemon/?offset=${Offset}&limit=${Limint}`
+    );
+    return promiseFetch(resPokemon.results).then((data) => {
+      allPokemon = [];
+      data.forEach((pokemon) => {
+        allPokemon.push(estrcuturePokemon(pokemon));
+      });
+      return allPokemon;
+    });
+  } catch (error) {
+    console.error(error.message);
+  }
+}
+
+async function getPokemon(pokemon) {
+  try {
+    if (!pokemon) {
+      throw new Error('No se a pasado un pokemon');
+    }
+    const resPokemon = await peticionFetch(`${URL}pokemon/${pokemon}`);
+    return estrcuturePokemon(resPokemon);
+  } catch (error) {
+    console.log(error);
+  }
+}
+
 async function getTypes() {
   if (!!allTypes) {
     return allTypes;
@@ -49,10 +99,8 @@ async function getTypes() {
   allTypes = new Object();
   allTypes['Todos'] = 'Todos';
   try {
-    const res = await fetch(`${URL}type/`);
+    const data = await peticionFetch(`${URL}type/`);
     const length = `${URL}type/`.length;
-    if (!res.ok) throw new Error('Error en la api');
-    const data = await res.json();
     let results = [];
     data.results.map((data) => {
       if (data.url.slice(length, data.url.length - 1) <= 1000) {
@@ -76,9 +124,7 @@ async function getTypes() {
 
 async function getPokemonType(type, limit) {
   try {
-    const res = await fetch(`${URL}type/${type}`);
-    if (!res.ok) throw new Error('Error en la api');
-    const data = await res.json();
+    const data = await peticionFetch(`${URL}type/${type}`);
     const pokemons = data.pokemon.slice(0, limit);
     return promiseFetch(pokemons, true).then((data) => {
       const allPokemon = [];
@@ -92,4 +138,4 @@ async function getPokemonType(type, limit) {
   }
 }
 
-export { getAllPokemon, getTypes, getPokemonType };
+export { getAllPokemon, getTypes, getPokemonType, getNamePokemon, getPokemon };
