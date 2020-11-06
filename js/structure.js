@@ -17,7 +17,7 @@ async function Stats(params) {
   icons.forEach((icon, i) => {
     const htmlStat = document.createElement('span');
     htmlStat.innerHTML += `<p><i class="fas ${icon}"></i> ${params[i].stat.name}</p>`;
-    htmlStat.innerHTML += `<p>${params[i].base_stat}</p>`;
+    htmlStat.innerHTML += `<p class="number">${params[i].base_stat}</p>`;
     htmStats.appendChild(htmlStat);
   });
   return htmStats;
