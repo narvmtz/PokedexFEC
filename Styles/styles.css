@@ -144,28 +144,6 @@ header {
   background: var(--gradient-cyan);
   box-shadow: var(--card-shadow);
   cursor: pointer;
-  transform-style: preserve-3d;
-  transition: all 0.8s ease;
-  position: relative;
-}
-.maincard {
-  margin: 1rem 0;
-  padding: 1rem 1rem;
-  width: 45%;
-  height: 30%;
-  position: absolute;
-  background: none;
-  transform: translate(-50%, -50%);
-}
-.front {
-  position: absolute;
-  margin: 1rem 0;
-  padding: 1rem 1rem;
-  width: 45%;
-  height: 30%;
-  border-radius: 0.8rem;
-  backface-visibility: hidden;
-  overflow: hidden;
 }
 
 .card h3{
@@ -207,10 +185,6 @@ header {
   animation: shake 0.5s;
   animation-iteration-count:0.5, 0, infinite;
 }
-.card:active {
-  transform: rotateY(180deg);
-}
-
 
 @keyframes shake {
   0% { transform: translate(1px, 1px) rotate(0deg); }
@@ -260,10 +234,6 @@ header {
   font-weight: 700;
   color:#4F4F4F;
   box-shadow: var(--stats-shadow);
-  display: absolute;
-  backface-visibility: hidden;
-  overflow: hidden;
-  transform: rotateY(180deg);
 }
 
 .stats span {

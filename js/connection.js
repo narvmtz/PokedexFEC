@@ -159,6 +159,7 @@ async function getPokemonType(type, limit) {
       });
       return allPokemon;
     });
+>>>>>>> origin/mobile
   } catch (error) {
     console.error(error.message);
   }
