@@ -99,10 +99,10 @@ header {
   height: 400px;
   background-color: red;
 }
-/* .filter {
+.filter {
   display: flex;
   justify-content: space-between;
-} */
+}
 
 .search,
 .typeSelect { 
@@ -234,7 +234,6 @@ header {
   border-radius:1rem;
   background-color: rgb(181, 253, 229);
   font-size: calc(0.3rem + 0.4vw);
-  display:none;
   font-weight: 700;
   color:#4F4F4F;
   box-shadow: var(--stats-shadow);
@@ -259,13 +258,10 @@ header {
     flex:1 calc(32% - 30px);
     margin-right: 1rem;
   }
-  .stats {
-  display: block;
-  }
 
   header {
     background-color: #FFFFFF;
-}
+  }
 
   .pokeball {
     display: none;
@@ -277,20 +273,38 @@ header {
 
   .search, .typeSelect {
     background-color: #cecece;
-}
+  }
 
-.search, .typeSelect {
+  .search, .typeSelect {
   background-color: #cecece;
-}
+  }
 
-button, input, optgroup, select, textarea {
+  button, input, optgroup, select, textarea {
   font-size: 80%;
-}
-.description{
-  display: none;
-}
+  }
 
-}
+  .description{
+  display: none;
+  }
+
+  .Info {
+  flex-direction: unset;
+  }
+
+  /* .stats {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-between;
+    margin-top: 0.8rem;
+    margin-bottom: 0rem;
+    padding: 0.2rem;
+    font-size: calc(0.4rem + 0.4vw);
+  }
+  
+  .stats span {
+  flex-direction: column-reverse;
+  padding: 0.2rem;
+  } */
 
 @media(min-width: 768px){
   .card{
