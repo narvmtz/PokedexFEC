@@ -1,4 +1,9 @@
-import { getAllPokemon, getPokemonType, getPokemon } from './connection.js';
+import {
+  getAllPokemon,
+  getPokemonType,
+  getPokemon,
+  getUrls,
+} from './connection.js';
 import { getAllCard, resetCard } from './card.js';
 import {
   peintType,
@@ -9,6 +14,8 @@ import {
 } from './peint.js';
 const TypeHtml = document.querySelector('#Type');
 const searchHtml = document.querySelector('#search');
+const nextButton = document.querySelector('#next');
+const previousButton = document.querySelector('#previous');
 const limit = 20;
 const Cards = peintAllCard(limit);
 
@@ -25,6 +32,32 @@ async function main() {
 }
 
 main();
+
+nextButton.addEventListener('click', () => {
+  getAllPokemon(limit, 'next')
+    .then((pokemons) => {
+      getAllCard(pokemons, Cards, true);
+      const url = getUrls();
+      if (previousButton.disabled) previousButton.disabled = false;
+      if (url[0] == null) nextButton.disabled = true;
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+});
+
+previousButton.addEventListener('click', () => {
+  getAllPokemon(limit, 'previous')
+    .then((pokemons) => {
+      getAllCard(pokemons, Cards, true);
+      const url = getUrls();
+      if (nextButton.disabled) nextButton.disabled = false;
+      if (url[1] == null) previousButton.disabled = true;
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+});
 
 TypeHtml.addEventListener('change', async () => {
   const selectedOption = TypeHtml.options[TypeHtml.selectedIndex];
