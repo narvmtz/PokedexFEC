@@ -68,6 +68,7 @@ header {
   animation-name: shake;
   animation-duration: .6s;
   animation-iteration-count: 2, infinite;
+  margin-right: 50%;
 }
 
 .pokemonTypes {
@@ -254,11 +255,6 @@ header {
 
 
 @media(max-width: 414px){
-  .card{
-    flex:1 calc(32% - 30px);
-    margin-right: 1rem;
-  }
-
   header {
     background-color: #FFFFFF;
   }
