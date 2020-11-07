@@ -1,6 +1,6 @@
 # Pokedex - Proyecto de FrontedEndCafé
 
-En la comunidad [FrontedEndCafé](https://frontend.cafe/) se decidio llevar acabo proyectos chicos en grupos reducidos con el objetivo de que la gente que tiene poca experiencia o nula en algunas tecnologias o en trabajo en equipo trabaje puedan aprender en grupos reducidos, los grupos varian entre 4, 5, o 6 participante donde los misma entre ellos tienen que decidir que van ha hacer y quien estaria de lider. Los proyectos se dieron una duracion de 2 semanas en la cual se tiene que llegar a terminar el mismo.
+En la comunidad [FrontedEndCafé](https://frontend.cafe/) se decidió proporcionar el espacio para llevar acabo proyectos pequeños en equipo, con el objetivo que las personas que tienen poca o nula experiencia en alguna o varias tecnologías y/o trabajo en equipo puedan desarrollar estas habilidades, los equipos varian de 4 a 6 participantes en los cuales el equipo decide el proyecto que van a hacer y escoge(n) líder(es). Para desarrollar el proyecto se propuso un espacio de 2 semanas para la presentación del mismo.
 
 Con eso en mente se llegaron a crear 4 de los cuales se dividieron en proyectos por colores, nosotros somos el grupo **black**, que en el mismo decidimos llevar acabo el proyecto de una pokedex con la api publica de pokemon [Pokeapi](https://pokeapi.co/)
 
