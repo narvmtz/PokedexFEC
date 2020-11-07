@@ -15,13 +15,9 @@ Y tu email:
 
 git config --global user.email email
 
-
-
-
 ## Trabajo colaborativo
 
 Ahora comienza el trabajo colaborativo, a continuación se darán unas pautas para configurar tu repositorio local.
-
 
 Después de tener configurado git vamos a repositorio del [proyecto](https://github.com/narvmtz/PokedexFEC) al cual vas a trabajar, en nuestro caso es este mismo. En el proyecto veras algo como en la siguiente imagen.
 
@@ -43,8 +39,6 @@ En donde dice <TU-USUARIO> debes cambiarlo por tu nombre de usuario de GitHub, l
 ![Imagen de copy](/img/copy.PNG)
 
 Ejecutando este comando tendrás una copia local idéntica del proyecto en tu computadora y podrás ver los archivos del mismo 🚀. 
-
-
 En el caso del ejemplo se usa el fork de PabloBagliere, al ejecutar el comando anterior en consola aparecerá algo parecido a lo siguiente:
 
 ```bash
