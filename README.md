@@ -6,7 +6,7 @@ A partir de esa idea, se crearon 5 equipos, 4 de los cuales se dividieron en pro
 
 ## Comenzando 🚀
 
-El proyecto está hecho 100% en Vanilla JavaScript, HTML y CSS, no se usa ninguna librería o framework del lado de JavaScript y HTML. En CSS se usa [Font awasome](https://fontawesome.com/) para los iconos.
+El proyecto está hecho 100% en Vanilla JavaScript, HTML y CSS, no se usa ninguna librería o framework del lado de JavaScript y HTML. En CSS se usa [Font awesome](https://fontawesome.com/) para los iconos.
 Si quieres empezar a colaborar en el proyecto, puedes comenzar clonando el repositorio. Primero debes tener instalado [Git](https://git-scm.com/) y crear una cuenta en [GitHub](https://github.com/), abre la consola de la computadora (para Windows te recomendamos usar Git Bash que usa Git) y configura tu nombre de usuario:
 
 ```bash
