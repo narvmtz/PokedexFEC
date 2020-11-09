@@ -1,5 +1,7 @@
 const URL = 'https://pokeapi.co/api/v2/';
-const Offset = 0;
+let previousUrl;
+let Offset = 0;
+let nextUrl;
 let allTypes;
 let allPokemon;
 let arrayPokemon;
@@ -41,6 +43,10 @@ function estrcuturePokemon(pokemon) {
   };
 }
 
+function getUrls() {
+  return [nextUrl, previousUrl];
+}
+
 async function getNamePokemon() {
   if (!!arrayPokemon) {
     return arrayPokemon;
@@ -60,20 +66,40 @@ async function getNamePokemon() {
   }
 }
 
-async function getAllPokemon(Limint) {
-  if (!!allPokemon) {
-    return allPokemon;
+async function getAllPokemon(Limint, peticion) {
+  let url;
+  switch (peticion) {
+    case 'next':
+      if (!!nextUrl) {
+        url = nextUrl;
+      }
+      break;
+    case 'previous':
+      if (!!previousUrl) {
+        url = previousUrl;
+      }
+      break;
+    default:
+      if (!!allPokemon) {
+        return allPokemon;
+      }
+      url = `${URL}pokemon/?offset=${Offset}&limit=${Limint}`;
+      break;
   }
+  await pagingPokemon(url);
+  return allPokemon;
+}
+
+async function pagingPokemon(url) {
   try {
-    const resPokemon = await peticionFetch(
-      `${URL}pokemon/?offset=${Offset}&limit=${Limint}`
-    );
+    const resPokemon = await peticionFetch(url);
+    previousUrl = resPokemon.previous;
+    nextUrl = resPokemon.next;
     return promiseFetch(resPokemon.results).then((data) => {
       allPokemon = [];
       data.forEach((pokemon) => {
         allPokemon.push(estrcuturePokemon(pokemon));
       });
-      return allPokemon;
     });
   } catch (error) {
     console.error(error.message);
@@ -138,4 +164,11 @@ async function getPokemonType(type, limit) {
   }
 }
 
-export { getAllPokemon, getTypes, getPokemonType, getNamePokemon, getPokemon };
+export {
+  getAllPokemon,
+  getTypes,
+  getPokemonType,
+  getNamePokemon,
+  getPokemon,
+  getUrls,
+};
