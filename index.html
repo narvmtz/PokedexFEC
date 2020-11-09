@@ -1,45 +1,42 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="stylesheet"
-      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
-      integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
-      crossorigin="anonymous"
-    />
-    <link rel="stylesheet" href="./Styles/styles.css">
-    <title>Pokedex</title>
-  </head>
-  <body>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" href="./img/apple-touch-icon.png">
+  <link rel="stylesheet" href="./Styles/normalize.css">
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+    integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+  <link rel="stylesheet" href="./Styles/styles.css">
+  <title>Pokedex</title>
+</head>
+
+<body>
+  <div class="wrapper">
     <header>
-      <div class="title">
-        <img
-          src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTtuLvq_z6fGcatFZVwO9KBw03rgVetQA-p9Q&usqp=CAU"
-          alt=""
-          width="30px"
-          height="30px"
-        />
-        <h1>Pokédex</h1>
+      <div class="pokeball">
+        <img src="./img/pokeball.svg" alt="icon-pokeball" width=30px height="30px">
       </div>
-      <p class="description">
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sequi,
-        sapiente! Omnis, nihil, corrupti dolor.
-      </p>
+      <nav class="pokemonTypes">
+        <section class="filter">
+          <input type="text" name="pokeSearch" id="search" class="search" list="suggestions" placeholder="Ingrese el nombre del pokemon" />
+          <datalist id="suggestions"></datalist>
+          <select name="Type" id="Type" class="typeSelect"></select>
+        </section>
+      </nav>
     </header>
+    <h1 class="title">
+      Pokédex
+    </h1>
+    <p class="description">
+      Ese es el propósito de Pokéapi, una API RESTful creada específicamente para informar a todos los jugadores de
+      Pokémon.
+      Es, de lejos, la mayor base de datos gratuita sobre Pokémon, y puedes utilizarla tanto y como quieras.
+    </p>
     <main class="main">
-      <section class="filter">
-        <input
-          type="text"
-          name="pokeSearch"
-          id="search"
-          class="search"
-          placeholder="Ingrese el nombre del pokemon"
-        />
-        <select name="Type" id="Type" class="typeSelect"></select>
-      </section>
-      <section class="collection" id="pokemon"></section>
+      <section id="pokemon" class="collection"></section>
     </main>
     <footer>
       <h3 class="team">Creado por ProyectoKey de FrontEnd Café</h3>
@@ -49,5 +46,7 @@
     <script type="module" src="./js/card.js"></script>
     <script type="module" src="./js/peint.js"></script>
     <script type="module" src="./js/main.js"></script>
-  </body>
+    <script type="module" src="./js/modal.js"></script>
+</body>
+
 </html>
