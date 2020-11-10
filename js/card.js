@@ -1,7 +1,12 @@
 import { createCard } from './structure.js';
 
+let Cards;
+
 function generateCard(amount) {
-  const Cards = [];
+  if (!!Cards) {
+    return Cards;
+  }
+  Cards = [];
   for (let index = 0; index < amount; index++) {
     const card = document.createElement('section');
     card.classList.add('hidden');
@@ -25,8 +30,8 @@ async function getCard(pokemon, card) {
     });
 }
 
-async function getAllCard(allPokemon, cards, types) {
-  if (types) {
+async function getAllCard(allPokemon, cards, reset) {
+  if (reset) {
     for (let index = 0; index < allPokemon.length; index++) {
       cards[index].innerHTML = '';
       cards[index].classList.remove('card');
@@ -34,7 +39,7 @@ async function getAllCard(allPokemon, cards, types) {
     }
   }
   for (let index = 0; index < allPokemon.length; index++) {
-    await getCard(allPokemon[index], cards[index], false);
+    getCard(allPokemon[index], cards[index], false);
   }
 }
 

@@ -96,7 +96,7 @@ header {
   background-color: red;
 }
 .filter {
-  display: none;
+  /* display: none; */
   justify-content: space-between;
 }
 
