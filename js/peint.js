@@ -1,7 +1,19 @@
 import { generateCard } from './card.js';
-import { getTypes } from './connection.js';
+import { getTypes, getNamePokemon } from './connection.js';
+import { createCard } from './structure.js';
 const Pokedex = document.querySelector('#pokemon');
 const TypeHtml = document.querySelector('#Type');
+const suggestionsHtml = document.querySelector('#suggestions');
+
+function namePokemon() {
+  getNamePokemon().then((pokemon) => {
+    pokemon.forEach((e) => {
+      const option = document.createElement('option');
+      option.setAttribute('value', e.name);
+      suggestionsHtml.appendChild(option);
+    });
+  });
+}
 
 async function peintType() {
   const Types = await getTypes();
@@ -14,7 +26,8 @@ async function peintType() {
     }
   }
 }
-function peintCard(limit) {
+
+function peintAllCard(limit) {
   const Cards = generateCard(limit);
   Cards.forEach((element) => {
     Pokedex.appendChild(element);
@@ -22,4 +35,26 @@ function peintCard(limit) {
   return Cards;
 }
 
-export { peintType, peintCard };
+function resetPokedex() {
+  Pokedex.innerHTML = '';
+}
+
+function peintCard(pokemon) {
+  const card = document.createElement('section');
+  card.classList.add('hidden');
+  Pokedex.appendChild(card);
+  createCard(pokemon)
+    .then((components) => {
+      components.forEach((componet) => {
+        card.appendChild(componet);
+        card.classList.remove('hidden');
+        card.classList.add('card');
+      });
+      return card;
+    })
+    .catch((error) => {
+      return error;
+    });
+}
+
+export { peintType, peintAllCard, namePokemon, peintCard, resetPokedex };
