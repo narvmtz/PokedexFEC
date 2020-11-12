@@ -148,25 +148,6 @@ header {
   transition: all 0.8s ease;
   position: relative;
 }
-.maincard {
-  margin: 1rem 0;
-  padding: 1rem 1rem;
-  width: 45%;
-  height: 30%;
-  position: absolute;
-  background: none;
-  transform: translate(-50%, -50%);
-}
-.front {
-  position: absolute;
-  margin: 1rem 0;
-  padding: 1rem 1rem;
-  width: 45%;
-  height: 30%;
-  border-radius: 0.8rem;
-  backface-visibility: hidden;
-  overflow: hidden;
-}
 
 .card h3{
   font-family: var(--font-primary);
@@ -256,11 +237,11 @@ header {
   border-radius:1rem;
   background-color: rgb(181, 253, 229);
   font-size: calc(0.3rem + 0.4vw);
-  display:none;
+  /* display:none; */
   font-weight: 700;
   color:#4F4F4F;
   box-shadow: var(--stats-shadow);
-  display: absolute;
+  /* display: absolute; */
   backface-visibility: hidden;
   overflow: hidden;
   transform: rotateY(180deg);
