@@ -96,7 +96,7 @@ header {
   background-color: red;
 }
 .filter {
-  /* display: none; */
+  display: none;
   justify-content: space-between;
 }
 
@@ -189,8 +189,6 @@ header {
   animation: shake 0.5s;
   animation-iteration-count:0.5, 0, infinite;
 }
-
-
 
 @keyframes shake {
   0% { transform: translate(1px, 1px) rotate(0deg); }

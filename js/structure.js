@@ -17,7 +17,7 @@ async function Stats(params) {
   icons.forEach((icon, i) => {
     const htmlStat = document.createElement('span');
     htmlStat.innerHTML += `<p><i class="fas ${icon}"></i> ${params[i].stat.name}</p>`;
-    htmlStat.innerHTML += `<p class="number">${params[i].base_stat}</p>`;
+    htmlStat.innerHTML += `<p>${params[i].base_stat}</p>`;
     htmStats.appendChild(htmlStat);
   });
   return htmStats;
@@ -35,7 +35,7 @@ async function Types(params) {
   return htmlType;
 }
 
-async function Info(imgs, id, name) {
+async function Info(imgs, id) {
   const htmlInfo = document.createElement('div');
   htmlInfo.classList.add('Info');
   imgs.forEach((img, i) => {
@@ -60,7 +60,7 @@ async function insertName(name) {
 
 async function createCard(pokemon) {
   return await Promise.all([
-    Info(pokemon.img, pokemon.id, pokemon.name),
+    Info(pokemon.img, pokemon.id),
     insertName(pokemon.name),
     Types(pokemon.types),
     Stats(pokemon.stats),

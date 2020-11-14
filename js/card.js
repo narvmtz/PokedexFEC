@@ -1,13 +1,8 @@
 import { createCard } from './structure.js';
 import { showStats } from './mobileStats.js'
 
-let Cards;
-
 function generateCard(amount) {
-  if (!!Cards) {
-    return Cards;
-  }
-  Cards = [];
+  const Cards = [];
   for (let index = 0; index < amount; index++) {
     const card = document.createElement('section');
     card.classList.add('hidden');
@@ -34,8 +29,8 @@ async function getCard(pokemon, card) {
     });
 }
 
-async function getAllCard(allPokemon, cards, reset) {
-  if (reset) {
+async function getAllCard(allPokemon, cards, types) {
+  if (types) {
     for (let index = 0; index < allPokemon.length; index++) {
       cards[index].innerHTML = '';
       cards[index].classList.remove('card');
@@ -43,7 +38,7 @@ async function getAllCard(allPokemon, cards, reset) {
     }
   }
   for (let index = 0; index < allPokemon.length; index++) {
-    getCard(allPokemon[index], cards[index], false);
+    await getCard(allPokemon[index], cards[index], false);
   }
 }
 
