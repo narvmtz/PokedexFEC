@@ -146,10 +146,9 @@ header {
   cursor: pointer;
   transform-style: preserve-3d;
   transition: all 0.8s ease;
-  position: relative;
 }
 
-.card h3{
+.name{
   font-family: var(--font-primary);
   font-weight: 800;
   color: #4F4F4F;
@@ -157,6 +156,8 @@ header {
   margin: 0;
   text-align: center;
   margin-bottom: 0.8rem;
+  transform-style: preserve-3d;
+  transition: all 0.8s ease;
 }
 
 .Info {
@@ -188,9 +189,7 @@ header {
   animation: shake 0.5s;
   animation-iteration-count:0.5, 0, infinite;
 }
-.card:active {
-  transform: rotateY(180deg);
-}
+
 
 
 @keyframes shake {
@@ -237,13 +236,12 @@ header {
   border-radius:1rem;
   background-color: rgb(181, 253, 229);
   font-size: calc(0.3rem + 0.4vw);
-  /* display:none; */
+  display:none;
   font-weight: 700;
   color:#4F4F4F;
   box-shadow: var(--stats-shadow);
-  /* display: absolute; */
-  backface-visibility: hidden;
-  overflow: hidden;
+  transform-style: preserve-3d;
+  transition: all 0.8s ease;
   transform: rotateY(180deg);
 }
 
@@ -267,6 +265,7 @@ header {
   }
   .stats {
   display: block;
+  transform: rotateY(0deg);
   }
 }
 
@@ -281,6 +280,7 @@ header {
   .description{
     margin:2rem 0rem;
   }
+
 }
 
 
