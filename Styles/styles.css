@@ -38,7 +38,7 @@ body{
 .text-center{
   text-align: center;
 }
- 
+
 .wrapper{
   height:auto;
   display: flex;
@@ -87,7 +87,7 @@ header {
   font-family: var(--font-secondary);
   width: 100%;
   text-align: center;
-  font-size:calc(13px + 0.2vw); 
+  font-size:calc(13px + 0.2vw);
   padding:1rem;
   color: #4F4F4F;
   font-weight: 500;
@@ -106,7 +106,7 @@ header {
 }
 
 .search,
-.typeSelect { 
+.typeSelect {
   width: 48%;
   padding: 0.3rem;
   border-radius: 1rem;
@@ -247,6 +247,14 @@ header {
   padding:0.5rem;
 }
 
+.pages {
+  display: flex;
+  width: 100%;
+  margin-top: 3rem;
+  font-family: var(--font-primary);
+  justify-content: center;
+}
+
 .team{
   font-family: var(--font-primary);
   width:100%;
@@ -296,7 +304,7 @@ header {
     padding: 0.2rem;
     font-size: calc(0.4rem + 0.4vw);
   }
-  
+
   .stats span {
   flex-direction: column-reverse;
   padding: 0.2rem;
@@ -327,7 +335,7 @@ header {
 
 
 
-/**** 
+/****
   TODO
   *Header arrancar
   *js modal ver
