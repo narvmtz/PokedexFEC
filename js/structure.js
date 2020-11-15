@@ -53,6 +53,7 @@ async function Info(imgs, id) {
 
 async function insertName(name) {
   const htmlName = document.createElement('h3');
+  htmlName.classList.add('name');
   htmlName.innerHTML = name;
   return htmlName;
 }

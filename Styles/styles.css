@@ -144,9 +144,11 @@ header {
   background: var(--gradient-cyan);
   box-shadow: var(--card-shadow);
   cursor: pointer;
+  transform-style: preserve-3d;
+  transition: all 0.8s ease;
 }
 
-.card h3{
+.name{
   font-family: var(--font-primary);
   font-weight: 800;
   color: #4F4F4F;
@@ -154,6 +156,8 @@ header {
   margin: 0;
   text-align: center;
   margin-bottom: 0.8rem;
+  transform-style: preserve-3d;
+  transition: all 0.8s ease;
 }
 
 .Info {
@@ -234,6 +238,9 @@ header {
   font-weight: 700;
   color:#4F4F4F;
   box-shadow: var(--stats-shadow);
+  transform-style: preserve-3d;
+  transition: all 0.8s ease;
+  transform: rotateY(180deg);
 }
 
 .stats span {
@@ -256,6 +263,7 @@ header {
   }
   .stats {
   display: block;
+  transform: rotateY(0deg);
   }
 }
 
@@ -270,6 +278,7 @@ header {
   .description{
     margin:2rem 0rem;
   }
+
 }
 
 
