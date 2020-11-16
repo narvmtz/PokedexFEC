@@ -262,7 +262,7 @@ header {
 }
 
 
-@media(max-width: 414px){
+/* @media(max-width: 414px){
   header {
     background-color: #FFFFFF;
   }
@@ -308,7 +308,7 @@ header {
   .stats span {
   flex-direction: column-reverse;
   padding: 0.2rem;
-  } */
+  } */ */
 
 @media(min-width: 768px){
   .card{
