@@ -50,17 +50,19 @@ body{
 
 .main{
   width:100%;
+  order: 3;
 }
 
 header {
   display: flex;
-  justify-content:flex-end;
+  justify-content:center;
   align-items: center;
   flex-direction: row;
   background-color:#4F4F4F;
   height:70px;
   width:100%;
   padding:1rem;
+  order: 2;
 }
 
 .pokeball{
@@ -68,12 +70,10 @@ header {
   animation-name: shake;
   animation-duration: .6s;
   animation-iteration-count: 2, infinite;
-  margin-right: 50%;
 }
 
-.pokemonTypes {
-  margin-left: auto;
-}
+/* .pokemonTypes {
+} */
 
 .title{
   margin: 1rem auto 0 auto;
@@ -253,6 +253,11 @@ header {
   margin-top: 3rem;
   font-family: var(--font-primary);
   justify-content: center;
+}
+
+footer{ 
+  display: flex;
+  order: 4;
 }
 
 .team{
