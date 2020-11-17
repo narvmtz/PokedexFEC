@@ -1,9 +1,11 @@
 import { createCard } from './structure.js';
 
 let Cards;
+let Limit;
 
 function generateCard(amount) {
-  if (!!Cards) {
+  Limit = amount;
+  if (!!Limit && Limit != amount) {
     return Cards;
   }
   Cards = [];
