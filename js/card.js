@@ -1,4 +1,5 @@
 import { createCard } from './structure.js';
+import { showStats } from './mobileStats.js';
 
 let Cards;
 
@@ -10,6 +11,9 @@ function generateCard(amount) {
   for (let index = 0; index < amount; index++) {
     const card = document.createElement('section');
     card.classList.add('hidden');
+    card.addEventListener("click", function() {
+      showStats(this);
+    });
     Cards.push(card);
   }
   return Cards;
