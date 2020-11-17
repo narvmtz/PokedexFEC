@@ -1,17 +1,6 @@
-import {
-  getAllPokemon,
-  getPokemonType,
-  getPokemon,
-  getUrls,
-} from './connection.js';
+import { getAllPokemon, getPokemonType } from './connection.js';
 import { getAllCard, resetCard } from './card.js';
-import {
-  peintType,
-  peintAllCard,
-  namePokemon,
-  peintCard,
-  resetPokedex,
-} from './peint.js';
+import { peintType, peintCard } from './peint.js';
 const TypeHtml = document.querySelector('#Type');
 const searchHtml = document.querySelector('#search');
 const nextButton = document.querySelector('#next');

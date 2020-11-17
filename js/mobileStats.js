@@ -21,7 +21,3 @@ function showStats(card) {
 };
 
 export { showStats };
-
-// Div de con clase card transform: rotateY(180deg);
-// div con clase Info type display: none;
-// div con clase stats display: block;
