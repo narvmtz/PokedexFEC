@@ -58,13 +58,17 @@ header {
   justify-content:center;
   align-items: center;
   flex-direction: row;
-  background-color: white;
+  background-image: linear-gradient(var(--color-primary), rgba(255,0,0,0));
   height:70px;
   width:100%;
   padding:1rem;
   order: 2;
   position: sticky;
   top: 0;
+  font-family: var(--font-primary);
+  justify-content: space-between;
+
+
 }
 
 .pokemonTypes{
@@ -108,20 +112,33 @@ header {
 }
 .filter {
   display: flex;
-  justify-content: space-between;
+  justify-content:center;
+}
+
+#Amount {
+  width: 12%;
+  padding: 0.3rem;
+  border-radius: 1rem;
+  border: 1px solid #c4c4c4;
 }
 
 .search,
 .typeSelect {
-  width: 48%;
+  width: 30%;
   padding: 0.3rem;
   border-radius: 1rem;
-  border: 2px solid #c4c4c4;
+  border: 1px solid #c4c4c4;
+  margin-right: 2%;
 }
 
 .search:focus,
 .typeSelect:focus {
   outline: none;
+}
+
+.cantidad{
+  line-height: 2.50;
+  margin-right: 0.5%;
 }
 
 .collection {
@@ -256,7 +273,7 @@ header {
 .pages {
   display: flex;
   width: 100%;
-  margin-top: 3rem;
+  margin-top: 2rem;
   font-family: var(--font-primary);
   justify-content: center;
 }
@@ -269,7 +286,7 @@ footer{
 .team{
   font-family: var(--font-primary);
   width:100%;
-  margin-top:4rem;
+  margin-top:1rem;
 }
 
 
@@ -285,21 +302,24 @@ footer{
 
   .title{
     order:2; 
+    margin: 0.1rem auto 0 auto;
+    font-size: calc(2.5rem + 0.5vw);
   }
 
    .description{
   display: none;
   }
 
-  button, input, optgroup, select, textarea {
+  button, input, optgroup, select, textarea, .cantidad {
     font-size: 70%;
 }
 
-.title{
-    margin: 0.1rem auto 0 auto;
-    font-size: calc(2.5rem + 0.5vw);
+footer{ 
+  display: flex;
+  order: 4;
+  margin-top: 0.5rem;
 }
-
+}
 
 @media(min-width: 768px){
   .card{

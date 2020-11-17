@@ -21,18 +21,18 @@
       </div>
       <nav class="pokemonTypes">
         <section class="filter">
-          <label for="Cantidad">Cantidad</label>
-          <select name="Amount" id="Amount" data-placeholder="Cantidad de pokémon">
+          <input type="text" name="pokeSearch" id="search" class="search" list="suggestions"
+            placeholder="Ingrese el nombre del pokemon" />
+          <datalist id="suggestions"></datalist>
+          <select name="Type" id="Type" class="typeSelect"></select>
+          <label for="Cantidad" class="cantidad">Cantidad</label>
+          <select name="Amount" id="Amount" data-placeholder="Cantidad">
             <option value="10">10</option>
             <option value="20">20</option>
             <option value="30">30</option>
             <option value="40">40</option>
             <option value="50">50</option>
           </select>
-          <input type="text" name="pokeSearch" id="search" class="search" list="suggestions"
-            placeholder="Ingrese el nombre del pokemon" />
-          <datalist id="suggestions"></datalist>
-          <select name="Type" id="Type" class="typeSelect"></select>
         </section>
       </nav>
     </header>
