@@ -66,7 +66,7 @@ async function getNamePokemon() {
   }
 }
 
-async function getAllPokemon(Limint, peticion) {
+async function getAllPokemon(Limit, peticion) {
   let url;
   switch (peticion) {
     case 'next':
@@ -79,11 +79,16 @@ async function getAllPokemon(Limint, peticion) {
         url = previousUrl;
       }
       break;
+    case 'limit':
+      if (!!Limit) {
+        url = `${URL}pokemon/?offset=${Offset}&limit=${Limit}`;
+      }
+      break;
     default:
       if (!!allPokemon) {
         return allPokemon;
       }
-      url = `${URL}pokemon/?offset=${Offset}&limit=${Limint}`;
+      url = `${URL}pokemon/?offset=${Offset}&limit=${Limit}`;
       break;
   }
   await pagingPokemon(url);

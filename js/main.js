@@ -16,13 +16,14 @@ const TypeHtml = document.querySelector('#Type');
 const searchHtml = document.querySelector('#search');
 const nextButton = document.querySelector('#next');
 const previousButton = document.querySelector('#previous');
-const limit = 20;
-const Cards = peintAllCard(limit);
+const Amount = document.querySelector('#Amount')
+let Limit = 20;
+let Cards = peintAllCard(Limit);
 
 async function main() {
   namePokemon();
   peintType();
-  getAllPokemon(limit)
+  getAllPokemon(Limit)
     .then((pokemons) => {
       getAllCard(pokemons, Cards, false);
     })
@@ -34,7 +35,7 @@ async function main() {
 main();
 
 nextButton.addEventListener('click', () => {
-  getAllPokemon(limit, 'next')
+  getAllPokemon(Limit, 'next')
     .then((pokemons) => {
       getAllCard(pokemons, Cards, true);
       const url = getUrls();
@@ -47,7 +48,7 @@ nextButton.addEventListener('click', () => {
 });
 
 previousButton.addEventListener('click', () => {
-  getAllPokemon(limit, 'previous')
+  getAllPokemon(Limit, 'previous')
     .then((pokemons) => {
       getAllCard(pokemons, Cards, true);
       const url = getUrls();
@@ -61,9 +62,9 @@ previousButton.addEventListener('click', () => {
 
 TypeHtml.addEventListener('change', async () => {
   const selectedOption = TypeHtml.options[TypeHtml.selectedIndex];
-  resetCard(Cards, limit);
+  resetCard(Cards, Limit);
   if (selectedOption.value === 'Todos') {
-    getAllPokemon(limit)
+    getAllPokemon(Limit)
       .then((pokemons) => {
         getAllCard(pokemons, Cards, false);
       })
@@ -72,7 +73,7 @@ TypeHtml.addEventListener('change', async () => {
       });
     return;
   }
-  await getPokemonType(selectedOption.value, limit).then((pokemons) => {
+  await getPokemonType(selectedOption.value, Limit).then((pokemons) => {
     getAllCard(pokemons, Cards, true);
   });
 });
@@ -81,7 +82,7 @@ searchHtml.addEventListener('change', () => {
   const selectedOption = searchHtml.value;
   if (!selectedOption) {
     resetPokedex();
-    peintAllCard(limit);
+    peintAllCard(Limit);
     return;
   }
   getPokemon(selectedOption).then((e) => {
@@ -90,3 +91,18 @@ searchHtml.addEventListener('change', () => {
     peintCard(e);
   });
 });
+
+Amount.addEventListener('change', async () => {
+  const selectedAmount = parseInt(Amount.value);
+  if(selectedAmount == Limit) return;
+  Limit = selectedAmount;
+  resetPokedex();
+  Cards = peintAllCard(Limit);
+  getAllPokemon(Limit, 'limit')
+  .then((pokemons) => {
+    getAllCard(pokemons, Cards, false);
+  })
+  .catch((error) => {
+    console.log(error);
+  });
+})

@@ -21,7 +21,16 @@
       </div>
       <nav class="pokemonTypes">
         <section class="filter">
-          <input type="text" name="pokeSearch" id="search" class="search" list="suggestions" placeholder="Ingrese el nombre del pokemon" />
+          <label for="Cantidad">Cantidad</label>
+          <select name="Amount" id="Amount" data-placeholder="Cantidad de pokémon">
+            <option value="10">10</option>
+            <option value="20">20</option>
+            <option value="30">30</option>
+            <option value="40">40</option>
+            <option value="50">50</option>
+          </select>
+          <input type="text" name="pokeSearch" id="search" class="search" list="suggestions"
+            placeholder="Ingrese el nombre del pokemon" />
           <datalist id="suggestions"></datalist>
           <select name="Type" id="Type" class="typeSelect"></select>
         </section>
@@ -39,7 +48,7 @@
       <section id="pokemon" class="collection"></section>
       <section class="pages">
         <button id="previous" disabled>Anterior</button>
-        <button id="next" >Siguiente</button>
+        <button id="next">Siguiente</button>
       </section>
     </main>
     <footer>
@@ -50,6 +59,7 @@
     <script type="module" src="./js/card.js"></script>
     <script type="module" src="./js/peint.js"></script>
     <script type="module" src="./js/main.js"></script>
+    <script src="./js/modal.js"></script>
 </body>
 
 </html>
