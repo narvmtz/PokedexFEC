@@ -1,10 +1,21 @@
 import { createCard } from './structure.js';
+import { showStats } from './mobileStats.js';
+
+let Cards;
+let Limit;
 
 function generateCard(amount) {
-  const Cards = [];
+  Limit = amount;
+  if (!!Limit && Limit != amount) {
+    return Cards;
+  }
+  Cards = [];
   for (let index = 0; index < amount; index++) {
     const card = document.createElement('section');
     card.classList.add('hidden');
+    card.addEventListener("click", function() {
+      showStats(this);
+    });
     Cards.push(card);
   }
   return Cards;
