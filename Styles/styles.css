@@ -1,4 +1,3 @@
-
 @import url("./normalize.css");
 /*Fonts*/
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
@@ -58,30 +57,23 @@ header {
   justify-content:center;
   align-items: center;
   flex-direction: row;
-  background-color: white;
+  background-image: linear-gradient(var(--color-primary), rgba(255,0,0,0));
   height:70px;
   width:100%;
   padding:1rem;
   order: 2;
   position: sticky;
   top: 0;
+  font-family: var(--font-primary);
+  justify-content: space-between;
 }
 
 .pokemonTypes{
   width: 100%;
 }
 
-.pokeball{
-  display: none;
-  cursor:pointer;
-  animation-name: shake;
-  animation-duration: .6s;
-  animation-iteration-count: 2, infinite;
-}
-
-
 .title{
-  margin: 1rem auto 0 auto;
+  margin: 2rem auto 0 auto;
   color: var(--color-primary);
   font-family: 'Oswald', sans-serif;
   font-size: calc(2.5rem + 1vw);
@@ -101,27 +93,36 @@ header {
   line-height: 1.7;
   font-style: italic;
 }
-.hidden {
-  width: 400px;
-  height: 400px;
-  background-color: red;
-}
+
 .filter {
   display: flex;
-  justify-content: space-between;
+  justify-content:center;
+}
+
+#Amount {
+  width: 14%;
+  padding: 0.3rem;
+  border-radius: 1rem;
+  border: 1px solid #c4c4c4;
 }
 
 .search,
 .typeSelect {
-  width: 48%;
+  width: 30%;
   padding: 0.3rem;
   border-radius: 1rem;
-  border: 2px solid #c4c4c4;
+  border: 1px solid #c4c4c4;
+  margin-right: 2%;
 }
 
 .search:focus,
 .typeSelect:focus {
   outline: none;
+}
+
+.cantidad{
+  line-height: 2.50;
+  margin-right: 0.5%;
 }
 
 .collection {
@@ -136,13 +137,12 @@ header {
   font-size: var(--normal);
   margin: 1rem 0;
   padding: 1rem 1rem;
-  width: 45%;
   border-radius: 0.8rem;
   background-image: url('../img/back2.png');
   background-position: center center;
   background-size: cover;
-  flex-direction: column;
-  display: flex;
+  width: 300px;
+  height: 400px;
 }
 
 .card {
@@ -192,6 +192,7 @@ header {
   width: calc(60% + 1vw);
   height: calc(60% + 1vw);
 }
+
 .card:hover {
   animation: shake 0.5s;
   animation-iteration-count:0.5, 0, infinite;
@@ -256,9 +257,29 @@ header {
 .pages {
   display: flex;
   width: 100%;
-  margin-top: 3rem;
+  margin-top: 2rem;
   font-family: var(--font-primary);
   justify-content: center;
+}
+
+.pag {
+  background-color: var(--color-primary);
+  color:#FFFFFF;
+  padding: 1rem;
+  border:1px solid #afb2b6; 
+  border-radius: 1rem;
+  margin: 0 1rem;
+  cursor: pointer;
+}
+
+.pag:active {
+  opacity: 0.65; 
+}
+
+.pag:disabled {
+  background-color: #9e9e9e;
+  opacity: 0.65; 
+  cursor: not-allowed;
 }
 
 footer{ 
@@ -269,10 +290,8 @@ footer{
 .team{
   font-family: var(--font-primary);
   width:100%;
-  margin-top:4rem;
+  margin-top:1rem;
 }
-
-
 
 @media(max-width: 414px){
   header {
@@ -285,71 +304,27 @@ footer{
 
   .title{
     order:2; 
-  }
-
-   .description{
-  display: none;
-  }
-
-  button, input, optgroup, select, textarea {
-    font-size: 70%;
-}
-
-.title{
     margin: 0.1rem auto 0 auto;
     font-size: calc(2.5rem + 0.5vw);
-}
-
-/*
-  header {
-    background-color: #FFFFFF;
-  }
-
-  .pokeball {
-    display: none;
-  }
-
-  .pokemonTypes {
-    margin: auto;
-  }
-
-  .search, .typeSelect {
-    background-color: #cecece;
-  }
-
-  .search, .typeSelect {
-  background-color: #cecece;
-  }
-
-  button, input, optgroup, select, textarea {
-  font-size: 80%;
   }
 
   .description{
-  display: none;
+    display: none;
   }
 
-  .Info {
-  flex-direction: unset;
+  button, input, optgroup, select, textarea, .cantidad {
+    font-size: 80%;
   }
 
-  /* .stats {
+  footer{ 
     display: flex;
-    flex-wrap: wrap;
-    align-content: space-between;
-    margin-top: 0.8rem;
-    margin-bottom: 0rem;
-    padding: 0.2rem;
-    font-size: calc(0.4rem + 0.4vw);
+    order: 4;
+    margin-top: 0.5rem;
   }
-
-  .stats span {
-  flex-direction: column-reverse;
-  padding: 0.2rem;
-  } */
+}
 
 @media(min-width: 768px){
-  .card{
+  .card, .hidden{
     flex:1 calc(32% - 30px);
     margin-right: 1rem;
   }
@@ -364,10 +339,10 @@ footer{
     margin:0 auto;
   }
   .title{
-  margin: 4rem auto 0 auto;
+  margin: 2rem auto 0 auto;
   }
   .description{
-    margin:2rem 0rem;
+    margin:1rem 0rem;
   }
 }
 
@@ -377,4 +352,3 @@ footer{
   TODO
   *Header arrancar
   *js modal ver
-/
