@@ -72,6 +72,14 @@ header {
   width: 100%;
 }
 
+.pokeball{
+  display: none;
+  cursor:pointer;
+  animation-name: shake;
+  animation-duration: .6s;
+  animation-iteration-count: 2, infinite;
+}
+
 .title{
   margin: 2rem auto 0 auto;
   color: var(--color-primary);
@@ -99,7 +107,7 @@ header {
   justify-content:center;
 }
 
-.amount {
+#Amount {
   width: 14%;
   padding: 0.3rem;
   border-radius: 1rem;
