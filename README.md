@@ -4,8 +4,9 @@ En la comunidad [FrontedEndCafé](https://frontend.cafe/) se decidió proporcion
 
 A partir de esa idea, se crearon 5 equipos, 4 de los cuales se dividieron en proyectos por colores (CMYK), nosotros somos el equipo **key** (o **black**), en el cual decidimos desarrollar el proyecto de una Pokedéx que usa la API pública de Pokemón [Pokeapi](https://pokeapi.co/).
 
-## Comenzando 🚀
+Quieres ver como quedó nuestra Pokédex, mirala acá: https://key.vercel.app/
 
+## Comenzando 🚀
 
 El proyecto está hecho 100% en Vanilla JavaScript, HTML y CSS, no se usa ninguna librería o framework del lado de JavaScript y HTML. En CSS se usa [Font awesome](https://fontawesome.com/) para los iconos.
 

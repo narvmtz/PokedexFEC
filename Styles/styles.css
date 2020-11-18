@@ -101,6 +101,57 @@ header {
   line-height: 1.7;
   font-style: italic;
 }
+.header-about{
+  display: flex;
+  justify-content: flex-end;
+}
+.mainAbout {
+  padding: 10% 10% 2%;
+  font-family: 'Oswald', sans-serif;
+  display: flex;
+  flex-direction: column;
+  font-size: 1.2rem;
+  /* margin: 0 auto; */
+}
+.team-profiles {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.avatar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+}
+.img__avatar {
+  width: 5rem;
+  border: solid 0.1rem #f0f0f0; 
+  border-radius: 5rem;
+  box-shadow: 3px 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+.paragraph{
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+}
+.paragraph h1 {
+  margin: 0.5rem;
+  font-size: 1.2rem;
+}
+.card-member{
+  margin: 1rem;
+  padding: 1rem; 
+  background-color:#fff;
+  width: 15rem;
+  height: 15.2rem;
+  border-radius: 0.5rem;
+  /* box-shadow: 10px 10px 55px -10px rgba(135,132,135,1);  */
+  box-shadow: 0 20px 40px -10px rgba(78, 78, 78, 0.4);
+}
+.footer-team {
+  text-align: center;
+}
 
 .filter {
   display: flex;
