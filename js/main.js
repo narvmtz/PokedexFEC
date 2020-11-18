@@ -3,6 +3,7 @@ import {
   getPokemonType,
   getPokemon,
   getUrls,
+  getStats
 } from './connection.js';
 import { getAllCard, resetCard } from './card.js';
 import {
@@ -21,6 +22,7 @@ let Limit = 20;
 let Cards = peintAllCard(Limit);
 
 async function main() {
+  getStats();
   namePokemon();
   peintType();
   getAllPokemon(Limit)
