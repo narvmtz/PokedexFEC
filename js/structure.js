@@ -55,13 +55,14 @@ async function Info(imgs, id, name) {
 
 async function insertName(name) {
   const htmlName = document.createElement('h3');
+  htmlName.classList.add('name');
   htmlName.innerHTML = name;
   return htmlName;
 }
 
 async function createCard(pokemon) {
   return await Promise.all([
-    Info(pokemon.img, pokemon.id, pokemon.name),
+    Info(pokemon.img, pokemon.id),
     insertName(pokemon.name),
     Types(pokemon.types),
     Stats(pokemon.stats),

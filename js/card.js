@@ -1,4 +1,5 @@
 import { createCard } from './structure.js';
+import { showStats } from './mobileStats.js';
 
 let Cards;
 let Limit;
@@ -12,6 +13,9 @@ function generateCard(amount) {
   for (let index = 0; index < amount; index++) {
     const card = document.createElement('section');
     card.classList.add('hidden');
+    card.addEventListener("click", function() {
+      showStats(this);
+    });
     Cards.push(card);
   }
   return Cards;
@@ -32,8 +36,8 @@ async function getCard(pokemon, card) {
     });
 }
 
-async function getAllCard(allPokemon, cards, reset) {
-  if (reset) {
+async function getAllCard(allPokemon, cards, types) {
+  if (types) {
     for (let index = 0; index < allPokemon.length; index++) {
       cards[index].innerHTML = '';
       cards[index].classList.remove('card');
@@ -41,7 +45,7 @@ async function getAllCard(allPokemon, cards, reset) {
     }
   }
   for (let index = 0; index < allPokemon.length; index++) {
-    getCard(allPokemon[index], cards[index], false);
+    await getCard(allPokemon[index], cards[index], false);
   }
 }
 
