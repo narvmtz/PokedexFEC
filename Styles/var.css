@@ -1,0 +1,28 @@
+:root{
+  --color-primary:#E53935;
+  --gradient-cyan: linear-gradient(380deg, rgba(110,217,216,0.2805322812718838) 5%, rgba(83,231,222,0.8351541300113796) 100%);
+  --font-primary:'Oswald', sans-serif;
+  --font-secondary:'Roboto Mono', monospace;
+  --card-shadow:0 10px 30px -10px rgb(2 137 154 / 59%);
+  --stats-shadow:10px 5px 20px -10px rgba(78, 78, 78, 0.2);
+
+  /*types-color*/
+  --color-bug:#D8E030;
+  --color-dark:#A8A878;
+  --color-dragon:#B8A0F8;
+  --color-electric:#F8F878;
+  --color-fairy:#F4BDC9;
+  --color-fighting:#F08030;
+  --color-fire:#F8D030;
+  --color-flying:#C8C0F8;
+  --color-grass:#C0F860;
+  --color-ground:#F8F878;
+  --color-ice:#D0F8E8;
+  --color-normal:#D8D8C0;
+  --color-ghost:#A890F0;
+  --color-posion:#D880B8;
+  --color-psychic:#F8C0B0;
+  --color-rock: #E0C068;
+  --color-steel: #D3D3D3;
+  --color-water:#67D2F1;
+}
