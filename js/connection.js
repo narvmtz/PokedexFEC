@@ -5,6 +5,7 @@ let nextUrl;
 let allTypes;
 let allPokemon;
 let arrayPokemon;
+let allStats;
 
 /* Funcion para estructurar todas las peticiones al api */
 async function promiseFetch(results, type) {
@@ -153,6 +154,28 @@ async function getTypes() {
   }
 }
 
+async function getStats() {
+  if(!!allStats) {
+    return allStats;
+  }
+  allStats = new Object();
+  try{
+    const data = await peticionFetch(`${URL}stat/`);
+    return promiseFetch(data.results).then((e) => {
+      e.forEach((stat) => {
+        stat.names.map((e) => {
+          if (e.language.name == 'es') {
+            allStats[stat.name] = e.name;
+          }
+        });
+      });
+      return;
+    });
+  } catch (error) {
+    console.error(error.mesage);
+  }
+}
+
 async function getPokemonType(type, limit) {
   try {
     const data = await peticionFetch(`${URL}type/${type}`);
@@ -176,4 +199,5 @@ export {
   getNamePokemon,
   getPokemon,
   getUrls,
+  getStats,
 };
