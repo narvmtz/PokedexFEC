@@ -129,7 +129,7 @@ async function getTypes() {
     return allTypes;
   }
   allTypes = new Object();
-  allTypes['Todos'] = 'Todos';
+  allTypes['Todos'] = 'Tipos';
   try {
     const data = await peticionFetch(`${URL}type/`);
     const length = `${URL}type/`.length;
@@ -155,11 +155,11 @@ async function getTypes() {
 }
 
 async function getStats() {
-  if(!!allStats) {
+  if (!!allStats) {
     return allStats;
   }
   allStats = new Object();
-  try{
+  try {
     const data = await peticionFetch(`${URL}stat/`);
     return promiseFetch(data.results).then((e) => {
       e.forEach((stat) => {
