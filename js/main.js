@@ -3,7 +3,7 @@ import {
   getPokemonType,
   getPokemon,
   getUrls,
-  getStats
+  getStats,
 } from './connection.js';
 import { getAllCard, resetCard } from './card.js';
 import {
@@ -17,14 +17,14 @@ const TypeHtml = document.querySelector('#Type');
 const searchHtml = document.querySelector('#search');
 const nextButton = document.querySelector('#next');
 const previousButton = document.querySelector('#previous');
-const Amount = document.querySelector('#Amount')
+const Amount = document.querySelector('#Amount');
 let Limit = 20;
 let Cards = peintAllCard(Limit);
 
 async function main() {
-  getStats();
+  await getStats();
   namePokemon();
-  peintType();
+  await peintType();
   getAllPokemon(Limit)
     .then((pokemons) => {
       getAllCard(pokemons, Cards, false);
@@ -96,15 +96,15 @@ searchHtml.addEventListener('change', () => {
 
 Amount.addEventListener('change', async () => {
   const selectedAmount = parseInt(Amount.value);
-  if(selectedAmount == Limit) return;
+  if (selectedAmount == Limit) return;
   Limit = selectedAmount;
   resetPokedex();
   Cards = peintAllCard(Limit);
   getAllPokemon(Limit, 'limit')
-  .then((pokemons) => {
-    getAllCard(pokemons, Cards, false);
-  })
-  .catch((error) => {
-    console.log(error);
-  });
-})
+    .then((pokemons) => {
+      getAllCard(pokemons, Cards, false);
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+});
