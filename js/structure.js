@@ -1,4 +1,4 @@
-import { getTypes } from './connection.js';
+import { getTypes, getStats } from './connection.js';
 
 const icons = [
   'fa-heart',
@@ -9,15 +9,17 @@ const icons = [
   'fa-bolt',
 ];
 
+
 const alt = [' - img front', ' - img back'];
 
 async function Stats(params) {
+  const allStat = await getStats();
   const htmStats = document.createElement('div');
   htmStats.classList.add('stats');
   icons.forEach((icon, i) => {
     const htmlStat = document.createElement('span');
-    htmlStat.innerHTML += `<p><i class="fas ${icon}"></i> ${params[i].stat.name}</p>`;
-    htmlStat.innerHTML += `<p>${params[i].base_stat}</p>`;
+    htmlStat.innerHTML += `<p><i class="fas ${icon}"></i> ${allStat[params[i].stat.name]}</p>`;
+    htmlStat.innerHTML += `<p class="number">${params[i].base_stat}</p>`;
     htmStats.appendChild(htmlStat);
   });
   return htmStats;
@@ -35,7 +37,7 @@ async function Types(params) {
   return htmlType;
 }
 
-async function Info(imgs, id) {
+async function Info(imgs, id, name) {
   const htmlInfo = document.createElement('div');
   htmlInfo.classList.add('Info');
   imgs.forEach((img, i) => {

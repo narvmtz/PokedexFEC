@@ -36,6 +36,10 @@ body{
 }
 
 /*utils*/
+.text-center{
+  text-align: center;
+}
+
 .wrapper{
   height:auto;
   display: flex;
@@ -317,9 +321,9 @@ svg {
     justify-content: space-between;
     cursor: auto;
   }
-  svg{
+  /* svg{
     top: -50px;
-  }
+  } */
 header{
   display: flex;
   justify-content: space-around;
@@ -333,7 +337,7 @@ header{
   padding-top: 4rem;
   } */
   .description{
-    margin:2rem 0rem;
+    margin: 0 auto;
   }
 
   .hidden {
@@ -342,11 +346,3 @@ header{
     height: 25rem;
   }
 }
-
-
-
-/****
-  TODO
-  *Header arrancar
-  *js modal ver
-/
