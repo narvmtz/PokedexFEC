@@ -6,7 +6,9 @@ A partir de esa idea, se crearon 5 equipos, 4 de los cuales se dividieron en pro
 
 ## Comenzando 🚀
 
-El proyecto está hecho 100% en Vanilla JavaScript, HTML y CSS, no se usa ninguna librería o framework del lado de JavaScript y HTML. En CSS se usa [Font awasome](https://fontawesome.com/) para los iconos.
+
+El proyecto está hecho 100% en Vanilla JavaScript, HTML y CSS, no se usa ninguna librería o framework del lado de JavaScript y HTML. En CSS se usa [Font awesome](https://fontawesome.com/) para los iconos.
+
 Si quieres empezar a colaborar en el proyecto, puedes comenzar clonando el repositorio. Primero debes tener instalado [Git](https://git-scm.com/) y crear una cuenta en [GitHub](https://github.com/), abre la consola de la computadora (para Windows te recomendamos usar Git Bash que usa Git) y configura tu nombre de usuario:
 
 ```bash
@@ -139,7 +141,7 @@ $ git commit -m "<cambio> agregado a <funcionalidad>"
 Finalmente para enviar los cambios a tu repositorio remoto (origin), ejecutas el siguiente comando:
 
 ```bash
-git push origin <nombreDeTuRama>
+$ git push origin <nombreDeTuRama>
 ```
 
 ### Pull request
@@ -159,13 +161,13 @@ $ git fetch --all
 Con este comando vamos a traer los cambios que hay en todos los remotos y luego de esto puedes hacer el merge (unir la rama develop con los cambios que tienes en el local) con el comando:
 
 ```bash
-git merge upstream/develop
+$ git merge upstream/develop
 ```
 
 Al trabajar en una rama diferente a develop no deberías tener conflictos de merge. Si estás trabajando en develop y surgen conflictos de merge puedes hacernos ping en el canal **🖤 Key** de [FrontEnd Café](discord.gg/frontendcafe) o si lo deseas puedes consultar la [Guía de ayuda de GitHub](https://docs.github.com/es/free-pro-team@latest/desktop/contributing-and-collaborating-using-github-desktop/syncing-your-branch).
 
 ## Equipo
-Como lo viste más arriba, somos el equipo **Key** de FrontEnd Café, somos 6 entusiastas que nos apuntamos a sacar este proyecto adelante para aprender a trabajar en equipo de forma colaborativa al tiempo que mejoramos nuestras habilidades técnicas 💪. Puedes ver nuestros perfiles de GitHub si quieres saber un poco más de cada uno...
+Como lo viste más arriba somos el equipo **Key** de FrontEnd Café, 6 entusiastas que nos apuntamos a sacar este proyecto adelante para aprender a trabajar en equipo de forma colaborativa al tiempo que mejoramos nuestras habilidades técnicas 💪. Puedes ver nuestros perfiles de GitHub si quieres saber un poco más de cada uno...
 
 - [Matías](https://github.com/matijpg)
 
@@ -182,3 +184,4 @@ Como lo viste más arriba, somos el equipo **Key** de FrontEnd Café, somos 6 en
 ## Gracias
 
 Por último, pero no menos importante queremos agradecerte habernos leído hasta acá y te animamos a proponer un Pull Request si te gustó el proyecto y quieres agregar algún feature o te parece que podemos mejorar en algo 🤗
+
