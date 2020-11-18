@@ -99,7 +99,7 @@ header {
   justify-content:center;
 }
 
-#Amount {
+.amount {
   width: 14%;
   padding: 0.3rem;
   border-radius: 1rem;
