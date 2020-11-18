@@ -38,7 +38,7 @@ body{
 .text-center{
   text-align: center;
 }
- 
+
 .wrapper{
   height:auto;
   display: flex;
@@ -278,13 +278,4 @@ header {
   .description{
     margin:2rem 0rem;
   }
-
-}
-
-
-
-/**** 
-  TODO
-  *Header arrancar
-  *js modal ver
-/
+} 

@@ -1,5 +1,7 @@
 import { createCard } from './structure.js';
-import { showStats } from './mobileStats.js'
+import { showStats } from './mobileStats.js';
+
+let Cards;
 
 function generateCard(amount) {
   const Cards = [];
